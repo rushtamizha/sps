@@ -37,17 +37,17 @@ const Navbar = () => {
           href="/"
           className="flex items-center gap-3 pr-4 cursor-pointer group"
         >
-          <div className="relative flex-shrink-0 transition-transform duration-300 h-12 w-12 group-hover:scale-110">
+          <div className="relative flex-shrink-0 transition-transform duration-300 h-13 w-13 group-hover:scale-110">
             <img
-              src="https://images.scalebranding.com/cool-a-logo-50afaa14-6473-4b28-b9c5-e08d50d8e7da.jpg"
+              src="/logo.png"
               alt="Logo"
-              className="object-cover w-full h-full border-2 rounded-full border-blue-50"
+              className="object-cover w-full h-full  rounded-full border-blue-50"
             />
           </div>
           <div className="flex flex-col justify-center leading-tight">
             <p className="text-md font-bold  uppercase text-gray-900">
-              One Way Taxi
-              <span className="ml-1 text-blue-600">bala</span>
+              Chennai - Pondi
+              <span className="ml-1 text-blue-600">Taxi</span>
             </p>
             <p className="text-xs font-medium  text-blue-600  tracking-wide">
               Premium Ride Experience

@@ -28,7 +28,8 @@ const TRANSFER_VEHICLES = [
     tag: 'MOST BOOKED',
     tagColor: 'bg-amber-500 text-white',
     capacity: '4+1',
-    fare: '2,499.00',
+    one: '14/KM',
+    round: '15/KM',
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp',
@@ -107,7 +108,7 @@ const TRANSFER_VEHICLES = [
 
 export default function AirportTransfers() {
   return (
-    <section className="w-full bg-white py-10 px-4 md:px-8 lg:px-16 text-gray-800 relative">
+    <section id='fleets' className="w-full bg-white py-10 px-4 md:px-8 lg:px-16 text-gray-800 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER BLOCK WITH UX FUNCTIONAL NAVIGATION PLATFORMS */}
@@ -187,8 +188,13 @@ export default function AirportTransfers() {
                     {/* Fare Details Grid */}
                     <div className="space-y-3 text-sm flex-grow mb-6">
                       <div className="flex justify-between items-center bg-blue-50 p-2 rounded-xl border border-gray-100/50">
-                        <span className="text-blue-800 font-semibold pl-1">All-Inclusive Fare</span>
-                        <span className="text-xl font-semibold text-blue-600 pr-1">₹{item.fare}</span>
+                        <span className="text-blue-800 font-semibold pl-1">One Way</span>
+                        <span className="text-xl font-semibold text-blue-600 pr-1">₹{item.one}</span>
+                      </div>
+
+                      <div className="flex justify-between items-center bg-amber-50 p-2 rounded-xl border border-gray-100/50">
+                        <span className="text-amber-800 font-semibold pl-1">Round Trip</span>
+                        <span className="text-xl font-semibold text-amber-600 pr-1">₹{item.round}</span>
                       </div>
                       
                       <div className="flex justify-between items-center px-1">

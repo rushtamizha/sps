@@ -17,7 +17,7 @@ import {
 const SERVICES_DATA = [
   {
     title: '24×7 One Way Taxi Service',
-    desc: 'Premium Drop Taxi offers round-the-clock one way taxi and intercity cab services for flexible travel across Tamil Nadu and South India.',
+    desc: 'Chennai - Pondi Taxi offers round-the-clock one way taxi and intercity cab services for flexible travel across Tamil Nadu and South India.',
     icon: Clock,
     color: 'text-blue-600 bg-blue-50 border-blue-100',
   },
@@ -54,10 +54,10 @@ export default function ServicesPage() {
           </div>
           <h1 className="text-3xl md:text-5xl font-semibold text-gray-900  leading-tight">
             Why Choose <br />
-            <span className="text-blue-600">Premium Drop Taxi</span>
+            <span className="text-blue-600">Chennai - Pondi Taxi</span>
           </h1>
           <p className="text-gray-500 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-            Premium Drop Taxi provides reliable one way taxi, intercity cab, and airport transfer services with professional drivers and comfortable vehicles for a smooth travel experience.
+            Chennai - Pondi Taxi provides reliable one way taxi, intercity cab, and airport transfer services with professional drivers and comfortable vehicles for a smooth travel experience.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export default function ServicesPage() {
           <div className="lg:col-span-5 h-64 rounded-2xl overflow-hidden bg-gray-100 border border-gray-100 relative shadow-inner">
             <img 
               src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop" 
-              alt="Premium Drop Taxi Ride Experience" 
+              alt="Chennai - Pondi Taxi Ride Experience" 
               className="w-full h-full object-cover"
             />
           </div>

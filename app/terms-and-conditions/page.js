@@ -89,10 +89,10 @@ export default function TermsAndConditions() {
                 1. Introduction & Overview
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Welcome to Premium Drop Taxi. By accessing our platform, utilizing our online booking tools, or using our phone/WhatsApp booking channels, you agree to comply with and be bound by the following terms and conditions.
+                Welcome to Chennai - Pondi Taxi. By accessing our platform, utilizing our online booking tools, or using our phone/WhatsApp booking channels, you agree to comply with and be bound by the following terms and conditions.
               </p>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                These terms govern all intercity, one-way, round-trip, and airport transfer transit services managed or arranged by Premium Drop Taxi across Tamil Nadu, Karnataka, Kerala, and surrounding regions.
+                These terms govern all intercity, one-way, round-trip, and airport transfer transit services managed or arranged by Chennai - Pondi Taxi across Tamil Nadu, Karnataka, Kerala, and surrounding regions.
               </p>
             </section>
 
@@ -107,7 +107,7 @@ export default function TermsAndConditions() {
               </p>
               <ul className="list-disc pl-5 text-gray-600 text-sm md:text-base space-y-1.5 pt-1">
                 <li>Bookings are confirmed only after a formal booking confirmation message or digital receipt is transmitted to your registered mobile number or email address.</li>
-                <li>The passenger must provide accurate pickup addresses, destination details, contact information, and desired departure timings. Premium Drop Taxi is not responsible for delayed execution resulting from inaccurate input data.</li>
+                <li>The passenger must provide accurate pickup addresses, destination details, contact information, and desired departure timings. Chennai - Pondi Taxi is not responsible for delayed execution resulting from inaccurate input data.</li>
               </ul>
             </section>
 
@@ -165,7 +165,7 @@ export default function TermsAndConditions() {
                 6. Disclaimers & Limitations
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                While our drivers make every effort to arrive ahead of your scheduled time, Premium Drop Taxi is not legally liable for delayed arrivals caused by unavoidable external forces. These include severe regional weather events, sudden highway gridlocks, force majeure incidents, or vehicle mechanical breakdowns en route.
+                While our drivers make every effort to arrive ahead of your scheduled time, Chennai - Pondi Taxi is not legally liable for delayed arrivals caused by unavoidable external forces. These include severe regional weather events, sudden highway gridlocks, force majeure incidents, or vehicle mechanical breakdowns en route.
               </p>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 In the rare event of a mechanical failure during a trip, our central support grid will prioritize dispatching a replacement fleet alternative as quickly as possible to ensure minimal disruption to your travel itinerary.

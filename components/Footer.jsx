@@ -48,7 +48,7 @@ export default function Footer() {
         >
           <div className="relative flex-shrink-0 transition-transform duration-300 h-12 w-12 group-hover:scale-110">
             <img
-              src="https://images.scalebranding.com/cool-a-logo-50afaa14-6473-4b28-b9c5-e08d50d8e7da.jpg"
+              src="/logo.png"
               alt="Logo"
               className="object-cover w-full h-full border-2 rounded-full border-blue-50"
             />
@@ -157,7 +157,7 @@ export default function Footer() {
         {/* BOTTOM METADATA / LEGAL SUMMARY BAR */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-xs text-gray-500 gap-4">
           <div>
-            &copy; {currentYear} <span className="text-white font-medium">Premium Drop Taxi</span>. All rights reserved.
+            &copy; {currentYear} <span className="text-white font-medium">Chennai - Pondi Taxi</span>. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <Link href="#" className="hover:text-gray-300 transition-colors">Terms & Conditions</Link>

@@ -72,7 +72,7 @@ export default function TaxiBookingHero() {
         {/* LEFT COLUMN: Marketing Content */}
         <div className="lg:col-span-6 flex flex-col justify-center space-y-3">
           <h1 className="text-4xl md:text-5xl  font-bold  uppercase text-white ">
-            Premium <br />
+            Chennai Pondicherry<br />
             <span className="text-blue-500">One Way & Round Trip</span> <br />
             Taxi Service
           </h1>

@@ -18,7 +18,7 @@ export default function ContactSection() {
           <div className="lg:col-span-6 space-y-3">
             <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-wider bg-blue-50 px-3.5 py-1.5 rounded-full w-max">
               <HelpCircle className="w-3.5 h-3.5" />
-              Contact Premium Drop Taxi
+              Contact Chennai - Pondi Taxi
             </div>
              <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 tracking-tight ">
               Book Your One Way Taxi <br />
@@ -27,7 +27,7 @@ export default function ContactSection() {
             
             <p className="text-gray-600 text-sm md:text-base font-medium  max-w-xl">
               Get instant taxi booking support for one way and intercity travel across Tamil Nadu and South India. 
-              Contact Premium Drop Taxi for fare details, route enquiry, and quick booking assistance.
+              Contact Chennai - Pondi Taxi for fare details, route enquiry, and quick booking assistance.
             </p>
 
             <div className="pt-4">

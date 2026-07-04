@@ -67,7 +67,7 @@ export default function AboutPage() {
             <span className="text-blue-600">Intercity Travel</span> Experience
           </h1>
           <p className="text-gray-500 text-sm md:text-base font-medium max-w-2xl mx-auto">
-            Premium Drop Taxi was established with a singular objective: to eliminate hidden costs and deliver dependable transit across South India.
+            Chennai - Pondi Taxi was established with a singular objective: to eliminate hidden costs and deliver dependable transit across South India.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
               Bridging the Gap Between Comfort & Fixed Pricing Models
             </h2>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              For years, outstation travelers faced ambiguous pricing setups, dynamic surging, and poor vehicle upkeep. Premium Drop Taxi entered the market to reshape this landscape by introducing certified one-way premium fares and structured round-trip solutions.
+              For years, outstation travelers faced ambiguous pricing setups, dynamic surging, and poor vehicle upkeep. Chennai - Pondi Taxi entered the market to reshape this landscape by introducing certified one-way premium fares and structured round-trip solutions.
             </p>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
               Today, our operating network effortlessly links primary sectors across <span className="font-bold text-gray-900">Tamil Nadu, Karnataka, and Kerala</span>. We accommodate local airport runs, cultural heritage tours, and corporate commutes with tailored care.

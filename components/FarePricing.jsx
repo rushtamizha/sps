@@ -97,7 +97,7 @@ export default function FarePricing() {
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="flex items-center justify-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
             <DollarSign className="w-3.5 h-3.5" />
-            Premium Drop Taxi Fare
+            Chennai - Pondi Taxi Fare
           </div>
           <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 ">
             One Way & Intercity Pricing
@@ -316,7 +316,7 @@ export default function FarePricing() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-transparent pointer-events-none" />
 
           <p className="text-gray-300 text-sm md:text-base font-medium max-w-3xl mx-auto mb-8 leading-relaxed">
-            Premium Drop Taxi offers reliable one way taxi and outstation cab
+            Chennai - Pondi Taxi offers reliable one way taxi and outstation cab
             services across Tamil Nadu and South India — including Chennai,
             Coimbatore, Madurai, Salem, and Trichy.
           </p>
