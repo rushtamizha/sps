@@ -33,16 +33,16 @@ export default function TermsAndConditions() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800 pt-32 pb-20 px-4 md:px-8 lg:px-16">
+    <main className="min-h-screen bg-white text-gray-800 pt-32 pb-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         
         {/* HERO TITLE HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <div className="flex items-center justify-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
             <Scale className="w-3.5 h-3.5" />
             Legal & Policy Framework
           </div>
-          <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 ">
+          <h1 className="text-2xl md:text-4xl font-semibold text-gray-900 ">
             Terms & Conditions
           </h1>
           <p className="text-gray-500 text-sm md:text-base font-medium">
@@ -54,7 +54,7 @@ export default function TermsAndConditions() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* STICKY SIDEBAR NAVIGATION (DESKTOP) */}
-          <aside className="hidden lg:block lg:col-span-4 sticky top-28 bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
+          <aside className="hidden lg:block lg:col-span-4 sticky top-28 bg-white border border-gray-100 rounded-3xl p-6 shadow-xs">
             <h3 className="text-xs font-semibold uppercase text-gray-400  mb-4 px-2">
               Table of Contents
             </h3>
@@ -67,7 +67,7 @@ export default function TermsAndConditions() {
                     onClick={() => scrollToSection(sec.id)}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-left transition-all ${
                       activeSection === sec.id
-                        ? 'bg-blue-600 text-white shadow-md shadow-blue-600/10'
+                        ? 'bg-blue-600 text-white shadow-xs shadow-blue-600/10'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }`}
                   >
@@ -80,7 +80,7 @@ export default function TermsAndConditions() {
           </aside>
 
           {/* DYNAMIC DOCUMENT CONTENT PANEL */}
-          <div className="lg:col-span-8 space-y-8 bg-white border border-gray-100 rounded-3xl p-6 md:p-10 shadow-sm">
+          <div className="lg:col-span-8 space-y-8 bg-white border border-gray-100 rounded-3xl p-6 md:p-10 shadow-xs">
             
             {/* INTRODUCTION */}
             <section id="introduction" className="space-y-3 scroll-mt-28">
@@ -186,14 +186,14 @@ export default function TermsAndConditions() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+916369424744"
+              href="tel:+918825555154"
               className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
             >
               <Phone className="w-4 h-4 fill-current" />
               Call Support Line
             </a>
             <a
-              href="https://wa.me/916369424744"
+              href="https://wa.me/918825555154"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 bg-[#25d366] hover:bg-[#20ba5a] text-white font-bold py-3 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"

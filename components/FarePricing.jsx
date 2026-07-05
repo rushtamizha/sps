@@ -16,68 +16,89 @@ import {
 const PRICING_TIERS = {
   "one-way": [
     {
-      name: "Sedan",
+      name: "Swift",
       price: "15",
       allowance: "₹400",
-      img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=200&auto=format&fit=crop",
+      img: "/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Etios",
       price: "16",
       allowance: "₹400",
-      img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=200&auto=format&fit=crop",
-    },
-    {
-      name: "SUV",
-      price: "20",
-      allowance: "₹400",
-      img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=200&auto=format&fit=crop",
+      img: "/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova",
+      price: "20",
+      allowance: "₹400",
+      img: "/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp",
+    },
+    {
+      name: "Ertiga",
       price: "21",
       allowance: "₹500",
-      img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=200&auto=format&fit=crop",
+      img: "/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova Crysta",
+      price: "21",
+      allowance: "₹500",
+      img: "/CardCars/toyota-innova-crysta-airport-taxi-pondicherry-to-chennai.webp",
+    },
+    {
+      name: "Innova Hycross",
       price: "25",
       allowance: "₹500",
-      img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=200&auto=format&fit=crop",
+      img: "/CardCars/innova-hycross-premium-taxi-pondicherry-to-chennai.webp",
+    },{
+      name: "Tempo Traveller",
+      price: "25",
+      allowance: "₹500",
+      img: "/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp",
     },
   ],
   "round-trip": [
-    {
-      name: "Sedan",
-      price: "14",
-      allowance: "₹500",
-      img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=200&auto=format&fit=crop",
+     {
+      name: "Swift",
+      price: "15",
+      allowance: "₹400",
+      img: "/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Etios",
-      price: "14",
-      allowance: "₹500",
-      img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=200&auto=format&fit=crop",
-    },
-    {
-      name: "SUV",
-      price: "19",
-      allowance: "₹500",
-      img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=200&auto=format&fit=crop",
+      price: "16",
+      allowance: "₹400",
+      img: "/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova",
       price: "20",
+      allowance: "₹400",
+      img: "/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp",
+    },
+    {
+      name: "Ertiga",
+      price: "21",
       allowance: "₹500",
-      img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=200&auto=format&fit=crop",
+      img: "/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova Crysta",
-      price: "22",
+      price: "21",
       allowance: "₹500",
-      img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=200&auto=format&fit=crop",
+      img: "/CardCars/toyota-innova-crysta-airport-taxi-pondicherry-to-chennai.webp",
     },
-  ],
+    {
+      name: "Innova Hycross",
+      price: "25",
+      allowance: "₹500",
+      img: "/CardCars/innova-hycross-premium-taxi-pondicherry-to-chennai.webp",
+    },{
+      name: "Tempo Traveller",
+      price: "25",
+      allowance: "₹500",
+      img: "/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp",
+    }, ]
 };
 
 const FEATURES = [
@@ -91,7 +112,7 @@ export default function FarePricing() {
   const [activeTab, setActiveTab] = useState("one-way"); // 'one-way' or 'round-trip'
 
   return (
-    <section className="w-full bg-gray-50 py-20 px-4 md:px-8 lg:px-16 text-gray-800">
+    <section className="w-full bg-white py-20 px-4 md:px-8 lg:px-16 text-gray-800">
       <div className="max-w-7xl mx-auto">
         {/* HEADER SECTION */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
@@ -99,7 +120,7 @@ export default function FarePricing() {
             <DollarSign className="w-3.5 h-3.5" />
             Chennai - Pondi Taxi Fare
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 ">
+          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 ">
             One Way & Intercity Pricing
           </h2>
           <p className="text-gray-500 text-sm md:text-base font-medium leading-relaxed">
@@ -110,11 +131,11 @@ export default function FarePricing() {
         </div>
 
         {/* TOP COMFORT CHIPS */}
-        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-10">
           {FEATURES.map((feat, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 bg-white border border-gray-100 rounded-full px-4 py-2 text-xs md:text-sm font-semibold text-gray-700 shadow-sm"
+              className="flex items-center gap-2 bg-white border border-gray-100 rounded-full px-4 py-2 text-xs md:text-sm font-semibold text-gray-700 shadow-xs"
             >
               <CheckCircle className="w-4 h-4 text-blue-600 shrink-0" />
               <span>{feat}</span>
@@ -124,12 +145,12 @@ export default function FarePricing() {
 
         {/* TRIP TYPE INTERACTIVE CONTROLLER */}
         <div className="flex justify-center mb-12">
-          <div className="bg-gray-200/70 p-1.5 rounded-2xl flex items-center w-full max-w-xs shadow-inner">
+          <div className="bg-gray-50 p-1.5 rounded-2xl flex items-center w-full max-w-xs ">
             <button
               onClick={() => setActiveTab("one-way")}
               className={`flex-1 text-center py-3 rounded-xl text-xs font-bold uppercase  transition-all ${
                 activeTab === "one-way"
-                  ? "bg-blue-600 text-white shadow-md"
+                  ? "bg-blue-600 text-white shadow-xs"
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -158,22 +179,22 @@ export default function FarePricing() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98, y: -10 }}
                 transition={{ duration: 0.25, delay: idx * 0.04 }}
-                className="w-full flex items-center justify-between gap-4 bg-[#0d192e] border border-white/5 rounded-2xl p-4 md:p-5 transition-all hover:bg-[#12223f] group relative overflow-hidden shadow-lg"
+                className="w-full flex items-center justify-between gap-4 bg-white border border-gray-50 rounded-2xl p-4 md:p-5 transition-all  group relative overflow-hidden shadow-xs hover:shadow-sm"
               >
                 {/* LEFT & CENTER COMBINED CONTENT */}
                 <div className="flex items-center gap-4 md:gap-6">
                   {/* Vehicle Vector Render Box */}
-                  <div className="h-12 w-30 md:h-16 md:w-28 flex items-center justify-center shrink-0 transform group-hover:scale-105 transition-transform duration-300">
+                  <div className="h-12 w-30 md:h-16 md:w-28 flex items-center justify-center shrink-0 transform group-hover:scale-105 transition-transform duration-300 rounded-2xl">
                     <img
                       src={car.img}
                       alt={car.name}
-                      className="max-h-full w-full object-contain filter drop-shadow-md"
+                      className="max-h-full w-full object-cover drop-shadow-md rounded-xl"
                     />
                   </div>
 
                   {/* Vehicle Information Text */}
                   <div className="text-left space-y-1">
-                    <h3 className="text-base md:text-lg font-bold text-white tracking-wide">
+                    <h3 className="text-base md:text-lg font-bold text-blue-600 tracking-wide">
                       {car.name}
                     </h3>
                     <p className="text-xs md:text-sm text-gray-400 font-medium">
@@ -199,7 +220,7 @@ export default function FarePricing() {
         {/* LEGAL TERMS AND GUIDANCE GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {/* One Way Terms Card */}
-          <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm space-y-4">
+          <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-xs space-y-4">
             <h4 className="text-sm font-semibold uppercase text-gray-900  flex items-center gap-2 border-b border-gray-50 pb-2">
               <FileText className="w-4 h-4 text-blue-600" />
               One Way Taxi Terms
@@ -234,7 +255,7 @@ export default function FarePricing() {
           </div>
 
           {/* Round Trip Terms Card */}
-          <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm space-y-4">
+          <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-xs space-y-4">
             <h4 className="text-sm font-semibold uppercase text-gray-900  flex items-center gap-2 border-b border-gray-50 pb-2">
               <FileText className="w-4 h-4 text-blue-600" />
               Round Trip Taxi Terms
@@ -271,7 +292,7 @@ export default function FarePricing() {
           </div>
 
           {/* Important Travel Notes Card */}
-          <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm space-y-4">
+          <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-xs space-y-4">
             <h4 className="text-sm font-semibold uppercase text-gray-900  flex items-center gap-2 border-b border-gray-50 pb-2">
               <AlertCircle className="w-4 h-4 text-amber-500" />
               Important Travel Notes
@@ -323,14 +344,14 @@ export default function FarePricing() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+916369424744"
+              href="tel:+918825555154"
               className="flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
             >
               <Phone className="w-4 h-4 fill-current" />
               Call Now — Get Fare
             </a>
             <a
-              href="https://wa.me/916369424744"
+              href="https://wa.me/918825555154"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2.5 bg-[#25d366] hover:bg-[#20ba5a] text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"

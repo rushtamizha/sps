@@ -37,7 +37,7 @@ const TRANSFER_VEHICLES = [
   },
   {
     id: 'etios',
-    name: 'Toyota Etios Airport Taxi',
+    name: 'Toyota Etios ',
     tag: null,
     capacity: '4+1',
     fare: '2,499.00',
@@ -48,7 +48,7 @@ const TRANSFER_VEHICLES = [
   },
   {
     id: 'ciaz',
-    name: 'Maruti Ciaz Airport Taxi',
+    name: 'Maruti Ciaz ',
     tag: null,
     capacity: '4+1',
     fare: '2,699.00',
@@ -59,7 +59,7 @@ const TRANSFER_VEHICLES = [
   },
   {
     id: 'ertiga',
-    name: 'Maruti Ertiga Airport Taxi',
+    name: 'Maruti Ertiga ',
     tag: 'FAMILY PICK',
     tagColor: 'bg-emerald-600 text-white',
     capacity: '6+1',
@@ -71,7 +71,7 @@ const TRANSFER_VEHICLES = [
   },
   {
     id: 'innova',
-    name: 'Toyota Innova Airport Taxi',
+    name: 'Toyota Innova ',
     tag: null,
     capacity: '7+1',
     fare: '3,799.00',
@@ -82,7 +82,7 @@ const TRANSFER_VEHICLES = [
   },
   {
     id: 'crysta',
-    name: 'Toyota Innova Crysta Airport Taxi',
+    name: 'Toyota Innova Crysta ',
     tag: 'PREMIUM',
     tagColor: 'bg-blue-600 text-white',
     capacity: '7+1',
@@ -94,7 +94,7 @@ const TRANSFER_VEHICLES = [
   },
   {
     id: 'tempo',
-    name: 'Tempo Traveller For Airport',
+    name: 'Tempo Traveller ',
     tag: 'GROUP',
     tagColor: 'bg-purple-600 text-white',
     capacity: '12+1',
@@ -116,11 +116,11 @@ export default function AirportTransfers() {
           <div className="space-y-2">
             <div className="flex items-center gap-2 bg-blue-50 text-blue-600 font-bold text-xs uppercase px-3 py-1.5 rounded-full w-max  tracking-wider">
               <PlaneTakeoff className="w-3.5 h-3.5" />
-              Airport Transfers
+              Fleets 
             </div>
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 tracking-tight ">
               Pondicherry to Chennai <br />
-              <span className="text-blue-600">Of Airport Taxi</span>
+              <span className="text-blue-600"> Taxi</span>
             </h2>
             <p className="text-gray-500 text-xs   md:text-sm font-medium">
               Pondy to Chennai & Chennai to Pondy mostly Recommended trip
@@ -219,7 +219,7 @@ export default function AirportTransfers() {
                     {/* Action Execution Layer */}
                     <div className="space-y-2.5 mt-auto">
                       <a
-                        href={`https://wa.me/916369424744?text=Hi,%20I%20want%20to%20book%20an%20Airport%20Transfer%20${encodeURIComponent(item.name)}`}
+                        href={`https://wa.me/918825555154?text=Hi,%20I%20want%20to%20book%20an%20Vehicle%20${encodeURIComponent(item.name)}`}
                         target="_blank"
                         rel="noreferrer"
                         className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs  uppercase shadow-md transition-all text-center"
