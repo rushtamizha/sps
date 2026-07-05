@@ -23,19 +23,19 @@ const PRICING_TIERS = {
     },
     {
       name: "Etios",
-      price: "16",
+      price: "15",
       allowance: "₹400",
       img: "/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova",
-      price: "20",
+      price: "21",
       allowance: "₹400",
       img: "/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Ertiga",
-      price: "21",
+      price: "19",
       allowance: "₹500",
       img: "/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp",
     },
@@ -47,12 +47,12 @@ const PRICING_TIERS = {
     },
     {
       name: "Innova Hycross",
-      price: "25",
+      price: "21",
       allowance: "₹500",
       img: "/CardCars/innova-hycross-premium-taxi-pondicherry-to-chennai.webp",
     },{
       name: "Tempo Traveller",
-      price: "25",
+      price: "30",
       allowance: "₹500",
       img: "/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp",
     },
@@ -60,42 +60,42 @@ const PRICING_TIERS = {
   "round-trip": [
      {
       name: "Swift",
-      price: "15",
+      price: "13",
       allowance: "₹400",
       img: "/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Etios",
-      price: "16",
+      price: "13",
       allowance: "₹400",
       img: "/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova",
-      price: "20",
+      price: "19",
       allowance: "₹400",
       img: "/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Ertiga",
-      price: "21",
+      price: "18",
       allowance: "₹500",
       img: "/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova Crysta",
-      price: "21",
+      price: "19",
       allowance: "₹500",
       img: "/CardCars/toyota-innova-crysta-airport-taxi-pondicherry-to-chennai.webp",
     },
     {
       name: "Innova Hycross",
-      price: "25",
+      price: "19",
       allowance: "₹500",
       img: "/CardCars/innova-hycross-premium-taxi-pondicherry-to-chennai.webp",
     },{
       name: "Tempo Traveller",
-      price: "25",
+      price: "30",
       allowance: "₹500",
       img: "/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp",
     }, ]

@@ -28,8 +28,8 @@ const TRANSFER_VEHICLES = [
     tag: 'MOST BOOKED',
     tagColor: 'bg-amber-500 text-white',
     capacity: '4+1',
-    one: '14/KM',
-    round: '15/KM',
+    one: '15/KM',
+    round: '13/KM',
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp',
@@ -40,7 +40,8 @@ const TRANSFER_VEHICLES = [
     name: 'Toyota Etios ',
     tag: null,
     capacity: '4+1',
-    fare: '2,499.00',
+    one: '15/KM',
+    round: '13/KM',
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp',
@@ -51,7 +52,8 @@ const TRANSFER_VEHICLES = [
     name: 'Maruti Ciaz ',
     tag: null,
     capacity: '4+1',
-    fare: '2,699.00',
+    one: '15/KM',
+    round: '13/KM',
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/maruti-ciaz-premium-one-way-taxi-chennai-to-pondicherry.webp',
@@ -63,7 +65,8 @@ const TRANSFER_VEHICLES = [
     tag: 'FAMILY PICK',
     tagColor: 'bg-emerald-600 text-white',
     capacity: '6+1',
-    fare: '3,499.00',
+    one: '19/KM',
+    round: '18/KM',
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp',
@@ -74,7 +77,8 @@ const TRANSFER_VEHICLES = [
     name: 'Toyota Innova ',
     tag: null,
     capacity: '7+1',
-    fare: '3,799.00',
+   one: '21/KM',
+    round: '19/KM',
     toll: 'Optional',
     luggage: 'Large',
     img: '/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp',
@@ -86,10 +90,23 @@ const TRANSFER_VEHICLES = [
     tag: 'PREMIUM',
     tagColor: 'bg-blue-600 text-white',
     capacity: '7+1',
-    fare: '4,499.00',
+    one: '21/KM',
+    round: '19/KM',
     toll: 'Optional',
     luggage: 'Large',
     img: '/CardCars/toyota-innova-crysta-airport-taxi-pondicherry-to-chennai.webp',
+    alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
+  },{
+    id: 'crysta',
+    name: ' Innova Hycross ',
+    tag: 'PREMIUM',
+    tagColor: 'bg-blue-600 text-white',
+    capacity: '7+1',
+    one: '21/KM',
+    round: '19/KM',
+    toll: 'Optional',
+    luggage: 'Large',
+    img: '/CardCars/innova-hycross-premium-taxi-pondicherry-to-chennai.webp',
     alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
   },
   {
@@ -98,7 +115,8 @@ const TRANSFER_VEHICLES = [
     tag: 'GROUP',
     tagColor: 'bg-purple-600 text-white',
     capacity: '12+1',
-    fare: '7,499.00',
+     one: '30/KM',
+    round: '26/KM',
     toll: 'Optional',
     luggage: 'XL Space',
     img: '/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp',
@@ -142,8 +160,8 @@ export default function AirportTransfers() {
             }}
             className="pb-16 w-full"
           >
-            {TRANSFER_VEHICLES.map((item) => (
-              <SwiperSlide key={item.id} className="h-auto">
+            {TRANSFER_VEHICLES.map((item,i) => (
+              <SwiperSlide key={i} className="h-auto">
                 <div className="bg-white rounded-[2rem] border border-gray-100 shadow-xs hover:shadow-sm transition-all duration-300 flex flex-col h-full overflow-hidden relative group m-0.5 m-2">
                   
                   {/* Badge Tag Component */}

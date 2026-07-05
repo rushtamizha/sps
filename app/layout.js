@@ -11,7 +11,7 @@ export const metadata = {
     template: "%s | Chennai Pondicherry Taxi Bala",
   },
   description:
-    "Book reliable, transparent Pondicherry taxi service. Low one-way drop taxi fares & round trips between Pondicherry, Chennai Airport, Bangalore & Kerala. Clean cars, verified drivers, 24/7 booking.",
+    "Book reliable, transparent Pondicherry taxi service.one-way drop taxi & round trips between Pondicherry, Chennai Airport Clean cars, verified drivers, 24/7 booking.",
   keywords: [
     "Pondicherry taxi",
     "Pondicherry to Chennai taxi",
