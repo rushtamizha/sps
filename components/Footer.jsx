@@ -380,7 +380,7 @@ export default function Footer() {
       </div>
 
       {/* MOBILE STICKY FLOATING QUICK DOCK BAR */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-3 grid grid-cols-2 gap-2.5 z-[999] shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
+      <div className="hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-3 grid grid-cols-2 gap-2.5 z-[999] shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
         <a
           href="https://wa.me/918825555154"
           target="_blank"
