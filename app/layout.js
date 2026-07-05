@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import { GoogleAnalytics } from '@next/third-parties/google';
 const SITE_URL = "https://www.chennaitopondicherryonewaytaxi.com/";
 
 export const metadata = {
@@ -68,9 +68,6 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-  },
-  verification: {
-    google: "G-C8B26BCX6P",
   },
 };
 
@@ -149,6 +146,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <GoogleAnalytics gaId="G-C8B26BCX6P" />
       </body>
     </html>
   );
