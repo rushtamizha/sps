@@ -31,13 +31,13 @@ const VEHICLES = [
     RoundTrip:"13/KM",
     img: "/BookingCars/swift-dzire-taxi.avif",
   },
-  {
-    id: "etios",
-    name: "ETIOS",
-     OnewayPrice: "₹14/KM",
-    RoundTrip:"13/KM",
-    img: "/BookingCars/etios-taxi.avif",
-  },
+  // {
+  //   id: "etios",
+  //   name: "ETIOS",
+  //    OnewayPrice: "₹14/KM",
+  //   RoundTrip:"13/KM",
+  //   img: "/BookingCars/etios-taxi.avif",
+  // },
   {
     id: "suv",
     name: "SUV",
