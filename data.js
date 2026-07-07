@@ -30,10 +30,10 @@ export const navData = [
     link: "/#fleets",
     icon: <Car size={16} />, // Keeps the clean automotive vector framework
   },
-  {
-    name: "Pricing",
-    slug: "pricing",
-    link: "/pricing",
-    icon: <CircleDollarSign size={16} />, // Swapped from generic layout icons to a crisp currency/pricing indicator
-  }
+  // {
+  //   name: "Pricing",
+  //   slug: "pricing",
+  //   link: "/pricing",
+  //   icon: <CircleDollarSign size={16} />, // Swapped from generic layout icons to a crisp currency/pricing indicator
+  // }
 ];

@@ -68,7 +68,7 @@ export default function Testimonials() {
     <section className="w-full bg-white py-10 px-4 md:px-8 lg:px-16 text-gray-800 relative overflow-hidden">
       
       {/* Decorative background branding shapes */}
-      <div className="absolute top-1/4 -right-20 w-72 h-72 bg-blue-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 -right-20 w-72 h-72 bg-emerald-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute bottom-10 -left-20 w-72 h-72 bg-emerald-50/40 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto">
@@ -76,13 +76,13 @@ export default function Testimonials() {
         {/* SECTION HEADER BLOCK */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full w-max">
+            <div className="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3.5 py-1.5 rounded-full w-max">
              <MessageCircle className="w-3.5 h-3.5" />
               Makkal Feedback
             </div>
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 tracking-tight ">
               Trusted By Thousands <br />
-              <span className="text-blue-600">Of Tamilnadu Travelers</span>
+              <span className="text-emerald-600">Of Tamilnadu Travelers</span>
             </h2>
             <p className="text-gray-500 text-sm md:text-base font-medium max-w-xl">
               Namma makkal oorgalukku payanam senju kudutha unmaiyana customer feedback. Experience transparency on every single route destination.
@@ -112,7 +112,7 @@ export default function Testimonials() {
                 <div className="bg-gray-50/60 border border-gray-100 rounded-[2rem] p-6 md:p-8 flex flex-col h-full justify-between transition-all duration-300 hover:bg-white hover:shadow-sm hover:border-white m-0.5 relative group">
                   
                   {/* Google Icon Decorative Quotation element */}
-                  <span className="material-symbols-outlined absolute right-6 top-6 text-5xl text-blue-500/10 pointer-events-none group-hover:text-blue-500/20 transition-colors select-none">
+                  <span className="material-symbols-outlined absolute right-6 top-6 text-5xl text-emerald-500/10 pointer-events-none group-hover:text-emerald-500/20 transition-colors select-none">
                     format_quote
                   </span>
 
@@ -137,7 +137,7 @@ export default function Testimonials() {
                   <div className="pt-5 mt-6 border-t border-gray-100 flex flex-col gap-3">
                     
                     {/* Local SEO Segment Routing info with Google Icon */}
-                    <div className="flex items-center gap-1.5 bg-blue-50/70 border border-blue-100/40 text-blue-700 text-[11px] font-bold px-2.5 py-1 rounded-lg w-max">
+                    <div className="flex items-center gap-1.5 bg-emerald-50/70 border border-emerald-100/40 text-emerald-700 text-[11px] font-bold px-2.5 py-1 rounded-lg w-max">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: '"FILL" 1' }}>
                         distance
                       </span>
@@ -146,13 +146,13 @@ export default function Testimonials() {
 
                     {/* Profile metrics setup */}
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white font-extrabold flex items-center justify-center text-sm shadow-md shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-600 to-orange-700 text-white font-extrabold flex items-center justify-center text-sm shadow-md shrink-0">
                         {review.name.charAt(0)}
                       </div>
                       <div className="min-w-0">
                         <h4 className="text-sm font-black text-gray-900 truncate tracking-tight flex items-center gap-1">
                           {review.name}
-                          <span className="material-symbols-outlined text-emerald-500 text-base font-bold" style={{ fontVariationSettings: '"FILL" 1' }}>
+                          <span className="material-symbols-outlined text-orange-500 text-base font-bold" style={{ fontVariationSettings: '"FILL" 1' }}>
                             verified_user
                           </span>
                         </h4>

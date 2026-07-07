@@ -41,15 +41,15 @@ const Navbar = () => {
             <img
               src="/logo.png"
               alt="Logo"
-              className="object-cover w-full h-full  rounded-full border-blue-50"
+              className="object-cover w-full h-full  rounded-full border-emerald-50"
             />
           </div>
           <div className="flex flex-col justify-center leading-tight">
             <p className="text-md font-bold  uppercase text-gray-900">
-              Chennai - Pondi
-              <span className="ml-1 text-blue-600">Taxi</span>
+              Green
+              <span className="ml-1 text-emerald-600">Tours & Travels</span>
             </p>
-            <p className="text-xs font-medium  text-blue-600  tracking-wide">
+            <p className="text-xs font-medium  text-emerald-600  tracking-wide">
               Premium Ride Experience
             </p>
           </div>
@@ -60,14 +60,14 @@ const Navbar = () => {
           {navData.map((menu) => (
   <div
     key={menu.name} // Prefer a unique string like name/id over index
-    className="relative px-3 py-2 transition-all rounded-full cursor-pointer group hover:bg-blue-600/5"
+    className="relative px-3 py-2 transition-all rounded-full cursor-pointer group hover:bg-emerald-600/5"
     onMouseEnter={() => setActiveMenu(menu.name)}
     onMouseLeave={() => setActiveMenu(null)}
   >
     <Link href={menu.link || "#"}>
-      <span className="flex items-center gap-2 text-sm font-semibold text-gray-700 group-hover:text-blue-600">
+      <span className="flex items-center gap-2 text-sm font-semibold text-gray-700 group-hover:text-emerald-600">
         {/* Changed 'hidden' to 'hidden group-hover:block' to show on hover */}
-        <span className="hidden transition-colors opacity-70 group-hover:block group-hover:text-blue-500">
+        <span className="hidden transition-colors opacity-70 group-hover:block group-hover:text-emerald-500">
           {menu.icon}
         </span>
         {menu.name}
@@ -82,7 +82,7 @@ const Navbar = () => {
         <div className="items-center hidden gap-3 rounded-full lg:flex">
           <button
             onClick={() => router.push("/contact")}
-            className="flex items-center gap-2 py-3 text-xs font-bold  text-white trcaking-wide uppercase transition-all rounded-full shadow-md bg-blue-600 px-7 hover:bg-blue-700"
+            className="flex items-center gap-2 py-3 text-xs font-bold  text-white trcaking-wide uppercase transition-all rounded-full shadow-md bg-emerald-600 px-7 hover:bg-emerald-700"
           >
            <MessageCircle size={14} /> Book Now
           </button>
@@ -113,9 +113,9 @@ const Navbar = () => {
                   <Link 
                     href={menu.link || "#"} 
                     onClick={() => setIsMobileOpen(false)}
-                    className="flex items-center gap-3 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors group"
+                    className="flex items-center gap-3 py-2 text-sm font-semibold text-gray-700 hover:text-emerald-600 transition-colors group"
                   >
-                    <span className="text-gray-400 group-hover:text-blue-600 group">{menu.icon}</span>
+                    <span className="text-gray-400 group-hover:text-emerald-600 group">{menu.icon}</span>
                     <span>{menu.name}</span>
                   </Link>
                 </div>
@@ -127,7 +127,7 @@ const Navbar = () => {
                     router.push("/contact");
                     setIsMobileOpen(false);
                   }}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-full text-sm font-bold flex items-center justify-center gap-2 shadow-lg  transition-colors"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-full text-sm font-bold flex items-center justify-center gap-2 shadow-lg  transition-colors"
                 >
                   <MessageCircle size={18} /> BOOK NOW 
                 </button>

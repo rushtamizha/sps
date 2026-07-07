@@ -24,7 +24,7 @@ export const metadata = {
     "Innova Crysta rental Pondicherry",
     "outstation taxi Tamil Nadu",
   ],
-  authors: [{ name: "Chennai - Pondi Taxi Bala" }],
+  authors: [{ name: "Green Tours & Travels Bala" }],
   category: "Transportation",
   alternates: {
     canonical: "/",
@@ -47,7 +47,7 @@ export const metadata = {
     title: "Pondicherry Taxi Service | One Way & Round Trip Drop Taxi Bala",
     description:
       "South India's trusted intercity taxi service. Flat-rate one-way and round-trip fares across Tamil Nadu & Pondicherry with clean, well-maintained cars.",
-    siteName: "Chennai - Pondi Taxi Bala",
+    siteName: "Green Tours & Travels Bala",
     images: [
       {
         url: "/taxi-hero.png",
@@ -84,13 +84,13 @@ export default function RootLayout({ children }) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "TaxiService",
-    name: "Chennai - Pondi Taxi Bala",
+    name: "Green Tours & Travels Bala",
     description:
       "Intercity drop taxi service specializing in one-way and round-trip transfers between Pondicherry, Chennai Airport, and major cities across South India.",
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     image: `${SITE_URL}/taxi-hero.png`,
-    telephone: "+91-8825555154",
+    telephone: "+91-9677792455",
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",

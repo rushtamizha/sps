@@ -17,9 +17,9 @@ import {
 const SERVICES_DATA = [
   {
     title: '24×7 One Way Taxi Service',
-    desc: 'Chennai - Pondi Taxi offers round-the-clock one way taxi and intercity cab services for flexible travel across Tamil Nadu and South India.',
+    desc: 'Green Tours & Travels offers round-the-clock one way taxi and intercity cab services for flexible travel across Tamil Nadu and South India.',
     icon: Clock,
-    color: 'text-blue-600 bg-blue-50 border-blue-100',
+    color: 'text-emerald-600 bg-emerald-50 border-emerald-100',
   },
   {
     title: 'Professional Drivers',
@@ -48,16 +48,16 @@ export default function ServicesPage() {
         
         {/* HERO HEADER SECTION */}
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
-          <div className="flex items-center justify-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
+          <div className="flex items-center justify-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
             <ShieldCheck className="w-3.5 h-3.5" />
             Our Core Competencies
           </div>
           <h1 className="text-2xl md:text-4xl font-semibold text-gray-900  leading-tight">
             Why Choose <br />
-            <span className="text-blue-600">Chennai - Pondi Taxi</span>
+            <span className="text-emerald-600">Green Tours & Travels</span>
           </h1>
           <p className="text-gray-500 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-            Chennai - Pondi Taxi provides reliable one way taxi, intercity cab, and airport transfer services with professional drivers and comfortable vehicles for a smooth travel experience.
+            Green Tours & Travels provides reliable one way taxi, intercity cab, and airport transfer services with professional drivers and comfortable vehicles for a smooth travel experience.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function ServicesPage() {
                 
                 {/* CONTENT AREA */}
                 <div className="space-y-2">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900  group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900  group-hover:text-emerald-600 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-500 text-sm font-medium leading-relaxed">
@@ -112,11 +112,11 @@ export default function ServicesPage() {
             {/* Quick list specs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs md:text-sm font-bold text-gray-700">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-blue-600" />
+                <MapPin className="w-4 h-4 text-emerald-600" />
                 <span>Intercity Dropping Focus</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-blue-600" />
+                <MapPin className="w-4 h-4 text-emerald-600" />
                 <span>Transparent Point-to-Point Fares</span>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function ServicesPage() {
           <div className="lg:col-span-5 h-64 rounded-2xl overflow-hidden bg-gray-100 border border-gray-100 relative shadow-inner">
             <img 
               src="/taxi-hero.png" 
-              alt="Chennai - Pondi Taxi Ride Experience" 
+              alt="Green Tours & Travels Ride Experience" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -133,7 +133,7 @@ export default function ServicesPage() {
 
         {/* BOTTOM CALL TO ACTION BLOCK */}
         <div className="bg-gray-900 text-white rounded-[2.5rem] p-8 md:p-12 shadow-xs text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/30 via-transparent to-transparent pointer-events-none" />
           <h3 className="text-2xl md:text-4xl font-semibold ">
             Need Travel Guidance or Immediate Booking?
           </h3>
@@ -142,14 +142,14 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+918825555154"
-              className="flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-all w-full sm:w-auto shadow-md active:scale-98"
+              href="tel:+919677792455"
+              className="flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-all w-full sm:w-auto shadow-md active:scale-98"
             >
               <Phone className="w-4 h-4 fill-current" />
               Call Support Desk
             </a>
             <a
-              href="https://wa.me/918825555154"
+              href="https://wa.me/919677792455"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2.5 bg-[#25d366] hover:bg-[#20ba5a] text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-all w-full sm:w-auto shadow-md active:scale-98"
