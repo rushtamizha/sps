@@ -116,9 +116,9 @@ export default function FarePricing() {
       <div className="max-w-7xl mx-auto">
         {/* HEADER SECTION */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="flex items-center justify-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
+          <div className="flex items-center justify-center gap-2 text-blue-700 font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
             <DollarSign className="w-3.5 h-3.5" />
-            Green Tours & Travels Fare
+            blue Tours & Travels Fare
           </div>
           <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 ">
             One Way & Intercity Pricing
@@ -136,7 +136,7 @@ export default function FarePricing() {
               key={idx}
               className="flex items-center gap-2 bg-white border border-gray-100 rounded-full px-4 py-2 text-xs md:text-sm font-semibold text-gray-700 shadow-xs"
             >
-              <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+              <CheckCircle className="w-4 h-4 text-blue-700 shrink-0" />
               <span>{feat}</span>
             </div>
           ))}
@@ -149,7 +149,7 @@ export default function FarePricing() {
               onClick={() => setActiveTab("one-way")}
               className={`flex-1 text-center py-3 rounded-xl text-xs font-bold uppercase  transition-all ${
                 activeTab === "one-way"
-                  ? "bg-emerald-600 text-white shadow-xs"
+                  ? "bg-blue-700 text-white shadow-xs"
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -159,7 +159,7 @@ export default function FarePricing() {
               onClick={() => setActiveTab("round-trip")}
               className={`flex-1 text-center py-3 rounded-xl text-xs font-bold uppercase  transition-all ${
                 activeTab === "round-trip"
-                  ? "bg-emerald-600 text-white shadow-md"
+                  ? "bg-blue-700 text-white shadow-md"
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -193,7 +193,7 @@ export default function FarePricing() {
 
                   {/* Vehicle Information Text */}
                   <div className="text-left space-y-1">
-                    <h3 className="text-base md:text-lg font-bold text-emerald-600 tracking-wide">
+                    <h3 className="text-base md:text-lg font-bold text-blue-700 tracking-wide">
                       {car.name}
                     </h3>
                     <p className="text-xs md:text-sm text-gray-400 font-medium">
@@ -221,7 +221,7 @@ export default function FarePricing() {
           {/* One Way Terms Card */}
           <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-xs space-y-4">
             <h4 className="text-sm font-semibold uppercase text-gray-900  flex items-center gap-2 border-b border-gray-50 pb-2">
-              <FileText className="w-4 h-4 text-emerald-600" />
+              <FileText className="w-4 h-4 text-blue-700" />
               One Way Taxi Terms
             </h4>
             <ul className="text-xs md:text-sm text-gray-500 font-medium space-y-2.5">
@@ -256,7 +256,7 @@ export default function FarePricing() {
           {/* Round Trip Terms Card */}
           <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-xs space-y-4">
             <h4 className="text-sm font-semibold uppercase text-gray-900  flex items-center gap-2 border-b border-gray-50 pb-2">
-              <FileText className="w-4 h-4 text-emerald-600" />
+              <FileText className="w-4 h-4 text-blue-700" />
               Round Trip Taxi Terms
             </h4>
             <ul className="text-xs md:text-sm text-gray-500 font-medium space-y-2.5">
@@ -333,17 +333,17 @@ export default function FarePricing() {
 
         {/* BOTTOM REDIRECT CLOSURE BLOCK */}
         <div className="bg-gray-900 rounded-[2.5rem] p-8 md:p-12 text-center text-white relative overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/30 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-transparent pointer-events-none" />
 
           <p className="text-gray-300 text-sm md:text-base font-medium max-w-3xl mx-auto mb-8 leading-relaxed">
-            Green Tours & Travels offers reliable one way taxi and outstation cab
+            blue Tours & Travels offers reliable one way taxi and outstation cab
             services across Tamil Nadu and South India — including Chennai and Pondicherry.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="tel:+919677792455"
-              className="flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
+              className="flex items-center justify-center gap-2.5 bg-blue-700 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
             >
               <Phone className="w-4 h-4 fill-current" />
               Call Now — Get Fare
@@ -361,17 +361,17 @@ export default function FarePricing() {
 
           <div className="mt-8 pt-6 border-t border-gray-800 flex items-center justify-center gap-6 text-[11px] font-bold text-gray-500 uppercase tracking-widest flex-wrap">
             <span className="flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" /> Transparent
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-500" /> Transparent
               pricing
             </span>
             <span>•</span>
             <span className="flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" /> Verified
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-500" /> Verified
               drivers
             </span>
             <span>•</span>
             <span className="flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-purple-500" /> 24×7
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-500" /> 24×7
               support
             </span>
           </div>

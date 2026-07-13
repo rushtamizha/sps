@@ -2,10 +2,11 @@
 
 // "use client";
 
-// import React, { useState } from "react";
+// import React, { useState, useEffect } from "react";
 // import { motion, AnimatePresence } from "framer-motion";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Autoplay, EffectFade } from "swiper/modules";
+// import { LoadScript } from "@react-google-maps/api";
 // import {
 //   Phone,
 //   MessageSquare,
@@ -21,60 +22,50 @@
 // import "swiper/css";
 // import "swiper/css/effect-fade";
 
-// const BACKGROUND_IMAGES = ["/bg-image.webp"];
+// const BACKGROUND_IMAGES = ["/download.avif"];
 
-// const VEHICLES = [
-//   {
-//     id: "sedan",
-//     name: "SEDAN",
-//     OnewayPrice: "₹14/KM",
-//     RoundTrip:"13/KM",
-//     img: "/BookingCars/swift-dzire-taxi.avif",
-//   },
-//   // {
-//   //   id: "etios",
-//   //   name: "ETIOS",
-//   //    OnewayPrice: "₹14/KM",
-//   //   RoundTrip:"13/KM",
-//   //   img: "/BookingCars/etios-taxi.avif",
-//   // },
-//   {
-//     id: "suv",
-//     name: "INNOVA",
-//     OnewayPrice: "₹19/KM",
-//     RoundTrip:"18/KM",
-//     img: "/BookingCars/marazzo-taxi.avif",
-//   },
-//   {
-//     id: "crysta",
-//     name: "CRYSTA",
-//     OnewayPrice: "₹21/KM",
-//     RoundTrip:"19/KM",
-//     img: "/BookingCars/innova-taxi.avif",
-//   },
-// ];
+// // Organized Fleet Registry mapped cleanly to respective Trip Rules
+// const VEHICLES_DATABASE = {
+//   "one-way": [
+//     { id: "sedan", name: "SEDAN", price: "₹15/KM", bata: "₹400", img: "/BookingCars/swift-dzire-taxi.avif" },
+//     { id: "innova", name: "INNOVA", price: "₹20/KM", bata: "₹500", img: "/BookingCars/marazzo-taxi.avif" },
+//     { id: "crysta", name: "CRYSTA", price: "₹23/KM", bata: "₹500", img: "/BookingCars/innova-taxi.avif" },
+//   ],
+//   "round-trip": [
+//     { id: "sedan", name: "SEDAN", price: "₹14/KM", bata: "₹400/Day", img: "/BookingCars/swift-dzire-taxi.avif" },
+//     { id: "innova", name: "INNOVA", price: "₹19/KM", bata: "₹500/Day", img: "/BookingCars/marazzo-taxi.avif" },
+//     { id: "crysta", name: "CRYSTA", price: "₹22/KM", bata: "₹600/Day", img: "/BookingCars/innova-taxi.avif" },
+//     { id: "hyscross", name: "HYSCROSS", price: "₹37/KM", bata: "₹600/Day", img: "/BookingCars/innova-taxi.avif" }, // Update with real path if needed
+//     { id: "urbania-12", name: "URBANIA 12", price: "₹35/KM", bata: "₹1000/Day", img: "/BookingCars/urbania.avif" },
+//     { id: "urbania-16", name: "URBANIA 16", price: "₹38/KM", bata: "₹1000/Day", img: "/BookingCars/urbania.avif" },
+//     { id: "tempo-12", name: "TEMPO 12", price: "₹24/KM", bata: "₹1000/Day", img: "/BookingCars/tempo.avif" },
+//     { id: "tempo-18", name: "TEMPO 18", price: "₹28/KM", bata: "₹1000/Day", img: "/BookingCars/tempo.avif" },
+//   ]
+// };
 
 // export default function TaxiBookingHero() {
 //   const [tripType, setTripType] = useState("one-way");
 //   const [selectedVehicle, setSelectedVehicle] = useState("sedan");
 
+//   // Keep selected vehicle safe or fall back to first index on tab changes
+//   useEffect(() => {
+//     const available = VEHICLES_DATABASE[tripType];
+//     const matchExists = available.some(v => v.id === selectedVehicle);
+//     if (!matchExists && available.length > 0) {
+//       setSelectedVehicle(available[0].id);
+//     }
+//   }, [tripType]);
+
 //   const getCurrentTimeFormatted = () => {
 //     const now = new Date();
-//     const hours = String(now.getHours()).padStart(2, "0");
-//     const minutes = String(now.getMinutes()).padStart(2, "0");
-//     return `${hours}:${minutes}`;
+//     return `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
 //   };
 
-//   // Helper to safely get current date formatted as YYYY-MM-DD
 //   const getCurrentDateFormatted = () => {
 //     const now = new Date();
-//     const year = now.getFullYear();
-//     const month = String(now.getMonth() + 1).padStart(2, "0");
-//     const day = String(now.getDate()).padStart(2, "0");
-//     return `${year}-${month}-${day}`;
+//     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 //   };
 
-//   // Form State Values
 //   const [formData, setFormData] = useState({
 //     pickupAddress: "",
 //     dropAddress: "",
@@ -94,13 +85,15 @@
 //   const handleBookingSubmit = (e) => {
 //     e.preventDefault();
 
-//     const targetVehicle = VEHICLES.find((v) => v.id === selectedVehicle);
+//     const activeFleet = VEHICLES_DATABASE[tripType];
+//     const targetVehicle = activeFleet.find((v) => v.id === selectedVehicle);
 //     const whatsappBaseNumber = "919677792455";
 
-//     // Formatting highly organized WhatsApp message layout
 //     let message = `*🚕 NEW TAXI BOOKING REQUEST* \n\n`;
 //     message += `*Trip Type:* ${tripType === "one-way" ? "One Way Drop" : "Round Trip Journey"}\n`;
-//     message += `*Selected Vehicle:* ${targetVehicle ? targetVehicle.name : selectedVehicle.toUpperCase()}\n\n`;
+//     message += `*Selected Vehicle:* ${targetVehicle ? targetVehicle.name : selectedVehicle.toUpperCase()}\n`;
+//     message += `*Estimated Fare Rate:* ${targetVehicle ? targetVehicle.price : "N/A"}\n`;
+//     message += `*Driver Bata:* ${targetVehicle ? targetVehicle.bata : "N/A"}\n\n`;
 
 //     message += `*📍 Route Details:*\n`;
 //     message += `• *Pickup Address:* ${formData.pickupAddress || "Not Specified"}\n`;
@@ -121,25 +114,24 @@
 //       message += `• *Email:* ${formData.emailAddress}\n`;
 //     }
 
-//     // Direct Browser Redirection to WhatsApp Api Layer
 //     const encryptedMessage = encodeURIComponent(message);
 //     const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappBaseNumber}&text=${encryptedMessage}`;
 
 //     window.open(whatsappUrl, "_blank");
 //   };
 
+//   // Extract currently valid fleet subset
+//   const currentFleet = VEHICLES_DATABASE[tripType];
+//   const activeVehicleObject = currentFleet.find(v => v.id === selectedVehicle) || currentFleet[0];
+
 //   return (
 //     <section className="relative min-h-screen w-full flex items-center justify-center pt-32 pb-16 px-4 md:px-8 lg:px-16 overflow-hidden bg-white">
-//       {/* Background Image Slider Layer using Swiper with subtle opacity */}
 //       <div className="absolute inset-0 z-0">
 //         <Swiper
 //           modules={[Autoplay, EffectFade]}
 //           effect={"fade"}
 //           fadeEffect={{ crossFade: true }}
-//           autoplay={{
-//             delay: 6000,
-//             disableOnInteraction: false,
-//           }}
+//           autoplay={{ delay: 6000, disableOnInteraction: false }}
 //           speed={1200}
 //           loop={true}
 //           className="w-full h-full"
@@ -155,297 +147,169 @@
 //         </Swiper>
 //       </div>
 
-//       {/* Light Gradient Overlay for crisp text readability */}
-//       <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-[#107357]/70 to-black/90" />
+//       <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-[#073376]/70 to-black/90" />
 
 //       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-//         {/* LEFT COLUMN: Marketing Content */}
+//         {/* LEFT COLUMN */}
 //         <div className="lg:col-span-6 flex flex-col justify-center space-y-3">
 //           <h1 className="text-4xl md:text-5xl font-bold uppercase text-white">
 //             Chennai Pondicherry
 //             <br />
-//             <span className="text-emerald-500">One Way & Round Trip</span> <br />
+//             <span className="text-blue-500">One Way & Round Trip</span> <br />
 //             Taxi Service
 //           </h1>
 
 //           <p className="text-white md:text-lg max-w-xl">
 //             Book reliable one way, round trip and airport taxi services across{" "}
-//             <span className="font-bold text-emerald-500">
-//               Tamil Nadu & Pondicherry
-//             </span>{" "}
-//             with professional drivers, transparent pricing and 24/7 booking
-//             support.
+//             <span className="font-bold text-blue-500">Tamil Nadu & Pondicherry</span>{" "}
+//             with professional drivers, transparent pricing and 24/7 booking support.
 //           </p>
 
-//           {/* Features Check Grid */}
 //           <div className="grid grid-cols-2 gap-y-3 gap-x-2 max-w-md text-sm font-medium text-black">
-//             <div className="flex items-center gap-2.5 bg-gray-50 border border-gray-100 p-2.5 rounded-xl">
-//               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-//               <span>Verified Drivers</span>
-//             </div>
-//             <div className="flex items-center gap-2.5 bg-gray-50 border border-gray-100 p-2.5 rounded-xl">
-//               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-//               <span>Transparent Pricing</span>
-//             </div>
-//             <div className="flex items-center gap-2.5 bg-gray-50 border border-gray-100 p-2.5 rounded-xl">
-//               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-//               <span>24/7 Support</span>
-//             </div>
-//             <div className="flex items-center gap-2.5 bg-gray-50 border border-gray-100 p-2.5 rounded-xl">
-//               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-//               <span>Clean Vehicles</span>
-//             </div>
+//             {["Verified Drivers", "Transparent Pricing", "24/7 Support", "Clean Vehicles"].map((f, i) => (
+//               <div key={i} className="flex items-center gap-2.5 bg-gray-50 border border-gray-100 p-2.5 rounded-xl">
+//                 <Check className="w-4 h-4 text-blue-700 shrink-0" />
+//                 <span>{f}</span>
+//               </div>
+//             ))}
 //           </div>
 
-//           {/* Call-to-actions buttons */}
 //           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-//             <a
-//               href="tel:+919677792455"
-//               className="flex items-center justify-center gap-3 bg-orange-500 text-white font-bold px-6 py-4 rounded-2xl hover:bg-orange-600 transition shadow-xs text-sm uppercase tracking-wide"
-//             >
+//             <a href="tel:+919677792455" className="flex items-center justify-center gap-3 bg-green-500 text-white font-bold px-6 py-4 rounded-2xl hover:bg-green-600 transition shadow-xs text-sm uppercase tracking-wide">
 //               <Phone className="w-4 h-4 fill-current" />
 //               Call +91 9677792455
 //             </a>
-//             <a
-//               href="https://wa.me/919677792455"
-//               target="_blank"
-//               rel="noreferrer"
-//               className="flex items-center justify-center gap-3 bg-emerald-700 text-white font-bold px-6 py-4 rounded-2xl hover:bg-emerald-600 transition shadow-xs text-sm uppercase tracking-wide"
-//             >
+//             <a href="https://wa.me/919677792455" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 bg-blue-700 text-white font-bold px-6 py-4 rounded-2xl hover:bg-blue-700 transition shadow-xs text-sm uppercase tracking-wide">
 //               <MessageSquare className="w-4 h-4 fill-current" />
 //               Book via WhatsApp
 //             </a>
 //           </div>
 //         </div>
 
-//         {/* RIGHT COLUMN: Booking Form Widget Card */}
+//         {/* RIGHT COLUMN: Form */}
 //         <div className="lg:col-span-6 flex justify-center lg:justify-end w-full">
-//           <form
-//             onSubmit={handleBookingSubmit}
-//             className="bg-white text-gray-800 w-full max-w-full rounded-3xl p-6 shadow-2xl flex flex-col border border-gray-100/80"
-//           >
+//           <form onSubmit={handleBookingSubmit} className="bg-white text-gray-800 w-full max-w-full rounded-3xl p-6 shadow-2xl flex flex-col border border-gray-100/80">
 //             <div className="text-center mb-5">
-//               <h2 className="text-lg font-semibold text-gray-900">
-//                 Book Your Premium Taxi Ride
-//               </h2>
-//               <p className="text-xs text-gray-500 font-medium">
-//                 One Way • Round Trip • Airport Transfers Across Tamil Nadu
-//               </p>
+//               <h2 className="text-lg font-semibold text-gray-900">Book Your Premium Taxi Ride</h2>
+//               <p className="text-xs text-gray-500 font-medium">One Way • Round Trip • Airport Transfers Across Tamil Nadu</p>
 //             </div>
 
-//             {/* Trip Type Selector Tabs */}
+//             {/* Trip Type Selector */}
 //             <div className="mb-4">
-//               <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">
-//                 Trip Type
-//               </label>
+//               <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Trip Type</label>
 //               <div className="grid grid-cols-2 gap-3">
 //                 <button
 //                   type="button"
 //                   onClick={() => setTripType("one-way")}
 //                   className={`p-3 rounded-xl border text-center transition flex flex-col items-center justify-center tracking-wide ${
 //                     tripType === "one-way"
-//                       ? "border-emerald-500 bg-emerald-50 text-emerald-600 ring-1 ring-emerald-500"
+//                       ? "border-blue-500 bg-blue-50 text-blue-700 ring-1 ring-blue-500"
 //                       : "border-gray-200 text-black hover:bg-gray-50"
 //                   }`}
 //                 >
-//                   <span className="text-xs font-bold">One Way</span>
-//                   <span className="text-[10px] text-black mt-0.5">
-//                     Min 130 KM
-//                   </span>
-//                   <span className="text-[10px] text-black">
-//                     Driver Bata: ₹400
-//                   </span>
+//                   <span className="text-xs font-bold">One Way Drop</span>
+//                   <span className="text-[10px] text-gray-500 mt-0.5">Min 130 KM</span>
 //                 </button>
 //                 <button
 //                   type="button"
 //                   onClick={() => setTripType("round-trip")}
 //                   className={`p-3 rounded-xl border text-center transition flex flex-col items-center justify-center tracking-wide ${
 //                     tripType === "round-trip"
-//                       ? "border-emerald-500 bg-emerald-50/50 text-emerald-600 ring-1 ring-emerald-500"
+//                       ? "border-blue-500 bg-blue-50/50 text-blue-700 ring-1 ring-blue-500"
 //                       : "border-gray-200 text-black hover:bg-gray-50"
 //                   }`}
 //                 >
 //                   <span className="text-xs font-bold">Round Trip</span>
-//                   <span className="text-[10px] text-black mt-0.5">
-//                     Min 250 KM / Day
-//                   </span>
-//                   <span className="text-[10px] text-black">
-//                     Driver Bata: ₹500 / Day
-//                   </span>
+//                   <span className="text-[10px] text-gray-500 mt-0.5">Min 250 KM / Day</span>
 //                 </button>
 //               </div>
 //             </div>
 
-//             {/* Inputs Container */}
+//             {/* Address fields */}
 //             <div className="space-y-3.5">
-//               {/* Pickup Address */}
-//               <div>
-//                 <label className="block text-xs font-medium text-gray-700 mb-1">
-//                   Pickup Address
-//                 </label>
-//                 <div className="relative">
-//                   <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-//                   <input
-//                     type="text"
-//                     name="pickupAddress"
-//                     value={formData.pickupAddress}
-//                     onChange={handleInputChange}
-//                     required
-//                     placeholder="Pickup Location"
-//                     className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-//                   />
-//                 </div>
-//               </div>
-
-//               {/* Drop Address */}
-//               <div>
-//                 <label className="block text-xs font-medium text-gray-700 mb-1">
-//                   Drop Address
-//                 </label>
-//                 <div className="relative">
-//                   <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-//                   <input
-//                     type="text"
-//                     name="dropAddress"
-//                     value={formData.dropAddress}
-//                     onChange={handleInputChange}
-//                     required
-//                     placeholder="Drop Location"
-//                     className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-//                   />
-//                 </div>
-//               </div>
-
-//               {/* Contact Info (Row) */}
 //               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 //                 <div>
-//                   <label className="block text-xs font-medium text-gray-700 mb-1">
-//                     Full Name
-//                   </label>
+//                   <label className="block text-xs font-medium text-gray-700 mb-1">Pickup Address</label>
 //                   <div className="relative">
-//                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-//                     <input
-//                       type="text"
-//                       name="fullName"
-//                       value={formData.fullName}
-//                       onChange={handleInputChange}
-//                       required
-//                       placeholder="Full Name"
-//                       className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500"
-//                     />
+//                     <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500" />
+//                     <input type="text" name="pickupAddress" value={formData.pickupAddress} onChange={handleInputChange} required placeholder="Pickup Location" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
 //                   </div>
 //                 </div>
 //                 <div>
-//                   <label className="block text-xs font-medium text-gray-700 mb-1">
-//                     Mobile Number
-//                   </label>
+//                   <label className="block text-xs font-medium text-gray-700 mb-1">Drop Address</label>
 //                   <div className="relative">
-//                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-//                     <input
-//                       type="tel"
-//                       name="mobileNumber"
-//                       value={formData.mobileNumber}
-//                       onChange={handleInputChange}
-//                       required
-//                       placeholder="Mobile Number"
-//                       className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500"
-//                     />
+//                     <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500" />
+//                     <input type="text" name="dropAddress" value={formData.dropAddress} onChange={handleInputChange} required placeholder="Drop Location" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
 //                   </div>
 //                 </div>
 //               </div>
 
-//               {/* Optional Email */}
-//               <div>
-//                 <label className="block text-xs font-medium text-gray-700 mb-1">
-//                   Email Address{" "}
-//                   <span className="text-gray-400 font-normal">(Optional)</span>
-//                 </label>
-//                 <div className="relative">
-//                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-//                   <input
-//                     type="email"
-//                     name="emailAddress"
-//                     value={formData.emailAddress}
-//                     onChange={handleInputChange}
-//                     placeholder="Email Address"
-//                     className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500"
-//                   />
+//               {/* Personal Info */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+//                 <div>
+//                   <label className="block text-xs font-medium text-gray-700 mb-1">Full Name</label>
+//                   <div className="relative">
+//                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500" />
+//                     <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} required placeholder="Full Name" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
+//                   </div>
+//                 </div>
+//                 <div>
+//                   <label className="block text-xs font-medium text-gray-700 mb-1">Mobile Number</label>
+//                   <div className="relative">
+//                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500" />
+//                     <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange} required placeholder="Mobile Number" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
+//                   </div>
 //                 </div>
 //               </div>
 
-//               {/* Date & Time (Row) */}
+//               {/* Date & Time */}
 //               <div className="grid grid-cols-2 gap-3">
 //                 <div>
-//                   <label className="block text-xs font-medium text-gray-700 mb-1">
-//                     Pickup Date
-//                   </label>
+//                   <label className="block text-xs font-medium text-gray-700 mb-1">Pickup Date</label>
 //                   <div className="relative">
-//                     <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500 pointer-events-none" />
-//                     <input
-//                       type="date"
-//                       name="pickupDate"
-//                       value={formData.pickupDate}
-//                       onChange={handleInputChange}
-//                       required
-//                       className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500"
-//                     />
+//                     <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 pointer-events-none" />
+//                     <input type="date" name="pickupDate" value={formData.pickupDate} onChange={handleInputChange} required className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
 //                   </div>
 //                 </div>
 //                 <div>
-//                   <label className="block text-xs font-medium text-gray-700 mb-1">
-//                     Pickup Time
-//                   </label>
+//                   <label className="block text-xs font-medium text-gray-700 mb-1">Pickup Time</label>
 //                   <div className="relative">
-//                     <Clock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500 pointer-events-none" />
-//                     <input
-//                       type="time"
-//                       name="pickupTime"
-//                       value={formData.pickupTime}
-//                       onChange={handleInputChange}
-//                       required
-//                       className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500"
-//                     />
+//                     <Clock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 pointer-events-none" />
+//                     <input type="time" name="pickupTime" value={formData.pickupTime} onChange={handleInputChange} required className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
 //                   </div>
 //                 </div>
 //               </div>
 
-//               {/* Conditional Return Date using Framer Motion */}
+//               {/* Dynamic Return field */}
 //               <AnimatePresence initial={false}>
 //                 {tripType === "round-trip" && (
-//                   <motion.div
-//                     initial={{ height: 0, opacity: 0 }}
-//                     animate={{ height: "auto", opacity: 1 }}
-//                     exit={{ height: 0, opacity: 0 }}
-//                     transition={{ duration: 0.25 }}
-//                     className="overflow-hidden"
-//                   >
-//                     <label className="block text-xs font-medium text-gray-700 mb-1">
-//                       Return Date
-//                     </label>
+//                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
+//                     <label className="block text-xs font-medium text-gray-700 mb-1">Return Date</label>
 //                     <div className="relative">
-//                       <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500 pointer-events-none" />
-//                       <input
-//                         type="date"
-//                         name="returnDate"
-//                         value={formData.returnDate}
-//                         onChange={handleInputChange}
-//                         required={tripType === "round-trip"}
-//                         placeholder="dd/mm/yyyy"
-//                         className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500"
-//                       />
+//                       <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 pointer-events-none" />
+//                       <input type="date" name="returnDate" value={formData.returnDate} onChange={handleInputChange} required={tripType === "round-trip"} className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
 //                     </div>
 //                   </motion.div>
 //                 )}
 //               </AnimatePresence>
 
-//               {/* Select Vehicle Carousel using Swiper.js */}
+//               {/* Dynamic Select Vehicle List with Custom Bata Sub-label */}
 //               <div>
-//                 <label className="block text-xs font-medium text-gray-700 mb-1.5">
-//                   Select Vehicle
-//                 </label>
+//                 <div className="flex justify-between items-center mb-1.5">
+//                   <label className="block text-xs font-semibold text-gray-700 uppercase">Select Vehicle</label>
+//                   <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md">
+//                     Driver Bata: {activeVehicleObject?.bata}
+//                   </span>
+//                 </div>
 //                 <Swiper
 //                   spaceBetween={8}
 //                   slidesPerView={3.5}
+//                   modules={[Autoplay]} 
+//     autoplay={{
+//       delay: 1000, 
+//       disableOnInteraction: false, 
+//       pauseOnMouseEnter: true, 
+//     }}
 //                   breakpoints={{
 //                     0: { slidesPerView: 2.5 },
 //                     400: { slidesPerView: 3.2 },
@@ -453,30 +317,22 @@
 //                   }}
 //                   className="w-full vehicle-swiper"
 //                 >
-//                   {VEHICLES.map((vehicle,i) => (
-//                     <SwiperSlide key={i}>
+//                   {currentFleet.map((vehicle) => (
+//                     <SwiperSlide key={vehicle.id}>
 //                       <div
 //                         onClick={() => setSelectedVehicle(vehicle.id)}
 //                         className={`cursor-pointer p-2 rounded-xl border text-center transition flex flex-col items-center justify-between h-[84px] m-1 bg-white ${
 //                           selectedVehicle === vehicle.id
-//                             ? "border-emerald-500 bg-emerald-50/20 ring-1 ring-emerald-500"
+//                             ? "border-blue-500 bg-blue-50/20 ring-1 ring-blue-500"
 //                             : "border-gray-200 hover:border-gray-300"
 //                         }`}
 //                       >
 //                         <div className="h-10 w-full flex items-center justify-center mix-blend-multiply">
-//                           <img
-//                             src={vehicle.img}
-//                             alt={vehicle.name}
-//                             className="h-full object-contain max-w-full rounded"
-//                           />
+//                           <img src={vehicle.img} alt={vehicle.name} className="h-full object-contain max-w-full rounded" />
 //                         </div>
 //                         <div>
-//                           <div className="text-[10px] font-medium text-gray-900 leading-none">
-//                             {tripType=="one-way"?vehicle.OnewayPrice:vehicle.RoundTrip}
-//                           </div>
-//                           <div className="text-[8px] text-black font-semibold mt-0.5 uppercase">
-//                             {vehicle.name}
-//                           </div>
+//                           <div className="text-[10px] font-bold text-blue-700 leading-none">{vehicle.price}</div>
+//                           <div className="text-[8px] text-gray-900 font-black mt-0.5 uppercase tracking-wide">{vehicle.name}</div>
 //                         </div>
 //                       </div>
 //                     </SwiperSlide>
@@ -485,16 +341,10 @@
 //               </div>
 //             </div>
 
-//             {/* Fare Button Action */}
-//             <button
-//               type="submit"
-//               className="w-full mt-5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition tracking-wide text-center shadow-md"
-//             >
+//             <button type="submit" className="w-full mt-5 bg-blue-700 hover:bg-blue-700 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition tracking-wide text-center shadow-md">
 //               Book Now
 //             </button>
-//             <span className="text-[10px] text-center text-gray-400 font-medium mt-2">
-//               Instant Whatsapp Support • Transparent pricing
-//             </span>
+//             <span className="text-xs text-center text-gray-700 font-medium mt-2">Toll Gate, State Permit, Hill Station, Parking - Charges Extra.</span>
 //           </form>
 //         </div>
 //       </div>
@@ -502,13 +352,13 @@
 //   );
 // }
 
-
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
+import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 import {
   Phone,
   MessageSquare,
@@ -524,9 +374,8 @@ import {
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-const BACKGROUND_IMAGES = ["/bg-image.webp"];
+const BACKGROUND_IMAGES = ["/download.avif"];
 
-// Organized Fleet Registry mapped cleanly to respective Trip Rules
 const VEHICLES_DATABASE = {
   "one-way": [
     { id: "sedan", name: "SEDAN", price: "₹15/KM", bata: "₹400", img: "/BookingCars/swift-dzire-taxi.avif" },
@@ -537,7 +386,7 @@ const VEHICLES_DATABASE = {
     { id: "sedan", name: "SEDAN", price: "₹14/KM", bata: "₹400/Day", img: "/BookingCars/swift-dzire-taxi.avif" },
     { id: "innova", name: "INNOVA", price: "₹19/KM", bata: "₹500/Day", img: "/BookingCars/marazzo-taxi.avif" },
     { id: "crysta", name: "CRYSTA", price: "₹22/KM", bata: "₹600/Day", img: "/BookingCars/innova-taxi.avif" },
-    { id: "hyscross", name: "HYSCROSS", price: "₹37/KM", bata: "₹600/Day", img: "/BookingCars/innova-taxi.avif" }, // Update with real path if needed
+    { id: "hyscross", name: "HYSCROSS", price: "₹37/KM", bata: "₹600/Day", img: "/BookingCars/innova-taxi.avif" },
     { id: "urbania-12", name: "URBANIA 12", price: "₹35/KM", bata: "₹1000/Day", img: "/BookingCars/urbania.avif" },
     { id: "urbania-16", name: "URBANIA 16", price: "₹38/KM", bata: "₹1000/Day", img: "/BookingCars/urbania.avif" },
     { id: "tempo-12", name: "TEMPO 12", price: "₹24/KM", bata: "₹1000/Day", img: "/BookingCars/tempo.avif" },
@@ -545,11 +394,25 @@ const VEHICLES_DATABASE = {
   ]
 };
 
+// Request only the 'places' library to optimize loading speed
+const GOOGLE_MAPS_LIBRARIES = ["places"];
+
 export default function TaxiBookingHero() {
   const [tripType, setTripType] = useState("one-way");
   const [selectedVehicle, setSelectedVehicle] = useState("sedan");
 
-  // Keep selected vehicle safe or fall back to first index on tab changes
+  // Autocomplete instance reference anchors
+  const pickupAutocompleteRef = useRef(null);
+  const dropAutocompleteRef = useRef(null);
+
+  // High-performance API script loader hook instance
+  const { isLoaded, loadError } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
+    libraries: GOOGLE_MAPS_LIBRARIES,
+    region: "IN", // Focus suggestions inside India geofence parameters
+  });
+
   useEffect(() => {
     const available = VEHICLES_DATABASE[tripType];
     const matchExists = available.some(v => v.id === selectedVehicle);
@@ -584,9 +447,28 @@ export default function TaxiBookingHero() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Capture selection updates from pickup suggest overlay
+  const onPickupPlaceChanged = () => {
+    if (pickupAutocompleteRef.current !== null) {
+      const place = pickupAutocompleteRef.current.getPlace();
+      if (place.formatted_address) {
+        setFormData((prev) => ({ ...prev, pickupAddress: place.formatted_address }));
+      }
+    }
+  };
+
+  // Capture selection updates from drop suggest overlay
+  const onDropPlaceChanged = () => {
+    if (dropAutocompleteRef.current !== null) {
+      const place = dropAutocompleteRef.current.getPlace();
+      if (place.formatted_address) {
+        setFormData((prev) => ({ ...prev, dropAddress: place.formatted_address }));
+      }
+    }
+  };
+
   const handleBookingSubmit = (e) => {
     e.preventDefault();
-
     const activeFleet = VEHICLES_DATABASE[tripType];
     const targetVehicle = activeFleet.find((v) => v.id === selectedVehicle);
     const whatsappBaseNumber = "919677792455";
@@ -596,11 +478,9 @@ export default function TaxiBookingHero() {
     message += `*Selected Vehicle:* ${targetVehicle ? targetVehicle.name : selectedVehicle.toUpperCase()}\n`;
     message += `*Estimated Fare Rate:* ${targetVehicle ? targetVehicle.price : "N/A"}\n`;
     message += `*Driver Bata:* ${targetVehicle ? targetVehicle.bata : "N/A"}\n\n`;
-
     message += `*📍 Route Details:*\n`;
     message += `• *Pickup Address:* ${formData.pickupAddress || "Not Specified"}\n`;
     message += `• *Drop Address:* ${formData.dropAddress || "Not Specified"}\n\n`;
-
     message += `*📅 Schedule Details:*\n`;
     message += `• *Pickup Date:* ${formData.pickupDate}\n`;
     message += `• *Pickup Time:* ${formData.pickupTime}\n`;
@@ -608,7 +488,6 @@ export default function TaxiBookingHero() {
       message += `• *Return Date:* ${formData.returnDate}\n`;
     }
     message += `\n`;
-
     message += `*👤 Customer Contact:*\n`;
     message += `• *Name:* ${formData.fullName || "Not Specified"}\n`;
     message += `• *Mobile:* ${formData.mobileNumber || "Not Specified"}\n`;
@@ -618,16 +497,15 @@ export default function TaxiBookingHero() {
 
     const encryptedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappBaseNumber}&text=${encryptedMessage}`;
-
     window.open(whatsappUrl, "_blank");
   };
 
-  // Extract currently valid fleet subset
   const currentFleet = VEHICLES_DATABASE[tripType];
   const activeVehicleObject = currentFleet.find(v => v.id === selectedVehicle) || currentFleet[0];
 
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center pt-32 pb-16 px-4 md:px-8 lg:px-16 overflow-hidden bg-white">
+      {/* Background Image Slider Layer */}
       <div className="absolute inset-0 z-0">
         <Swiper
           modules={[Autoplay, EffectFade]}
@@ -648,40 +526,36 @@ export default function TaxiBookingHero() {
           ))}
         </Swiper>
       </div>
-
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-[#107357]/70 to-black/90" />
-
+      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-[#073376]/70 to-black/90" />
+      
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* LEFT COLUMN */}
         <div className="lg:col-span-6 flex flex-col justify-center space-y-3">
           <h1 className="text-4xl md:text-5xl font-bold uppercase text-white">
             Chennai Pondicherry
             <br />
-            <span className="text-emerald-500">One Way & Round Trip</span> <br />
+            <span className="text-blue-500">One Way & Round Trip</span> <br />
             Taxi Service
           </h1>
-
           <p className="text-white md:text-lg max-w-xl">
             Book reliable one way, round trip and airport taxi services across{" "}
-            <span className="font-bold text-emerald-500">Tamil Nadu & Pondicherry</span>{" "}
+            <span className="font-bold text-blue-500">Tamil Nadu & Pondicherry</span>{" "}
             with professional drivers, transparent pricing and 24/7 booking support.
           </p>
-
           <div className="grid grid-cols-2 gap-y-3 gap-x-2 max-w-md text-sm font-medium text-black">
             {["Verified Drivers", "Transparent Pricing", "24/7 Support", "Clean Vehicles"].map((f, i) => (
               <div key={i} className="flex items-center gap-2.5 bg-gray-50 border border-gray-100 p-2.5 rounded-xl">
-                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                <Check className="w-4 h-4 text-blue-700 shrink-0" />
                 <span>{f}</span>
               </div>
             ))}
           </div>
-
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href="tel:+919677792455" className="flex items-center justify-center gap-3 bg-orange-500 text-white font-bold px-6 py-4 rounded-2xl hover:bg-orange-600 transition shadow-xs text-sm uppercase tracking-wide">
+            <a href="tel:+919677792455" className="flex items-center justify-center gap-3 bg-green-500 text-white font-bold px-6 py-4 rounded-2xl hover:bg-green-600 transition shadow-xs text-sm uppercase tracking-wide">
               <Phone className="w-4 h-4 fill-current" />
               Call +91 9677792455
             </a>
-            <a href="https://wa.me/919677792455" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 bg-emerald-700 text-white font-bold px-6 py-4 rounded-2xl hover:bg-emerald-600 transition shadow-xs text-sm uppercase tracking-wide">
+            <a href="https://wa.me/919677792455" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 bg-blue-700 text-white font-bold px-6 py-4 rounded-2xl hover:bg-blue-700 transition shadow-xs text-sm uppercase tracking-wide">
               <MessageSquare className="w-4 h-4 fill-current" />
               Book via WhatsApp
             </a>
@@ -695,7 +569,7 @@ export default function TaxiBookingHero() {
               <h2 className="text-lg font-semibold text-gray-900">Book Your Premium Taxi Ride</h2>
               <p className="text-xs text-gray-500 font-medium">One Way • Round Trip • Airport Transfers Across Tamil Nadu</p>
             </div>
-
+            
             {/* Trip Type Selector */}
             <div className="mb-4">
               <label className="block text-xs font-semibold text-gray-700 uppercase mb-2">Trip Type</label>
@@ -705,7 +579,7 @@ export default function TaxiBookingHero() {
                   onClick={() => setTripType("one-way")}
                   className={`p-3 rounded-xl border text-center transition flex flex-col items-center justify-center tracking-wide ${
                     tripType === "one-way"
-                      ? "border-emerald-500 bg-emerald-50 text-emerald-600 ring-1 ring-emerald-500"
+                      ? "border-blue-500 bg-blue-50 text-blue-700 ring-1 ring-blue-500"
                       : "border-gray-200 text-black hover:bg-gray-50"
                   }`}
                 >
@@ -717,7 +591,7 @@ export default function TaxiBookingHero() {
                   onClick={() => setTripType("round-trip")}
                   className={`p-3 rounded-xl border text-center transition flex flex-col items-center justify-center tracking-wide ${
                     tripType === "round-trip"
-                      ? "border-emerald-500 bg-emerald-50/50 text-emerald-600 ring-1 ring-emerald-500"
+                      ? "border-blue-500 bg-blue-50/50 text-blue-700 ring-1 ring-blue-500"
                       : "border-gray-200 text-black hover:bg-gray-50"
                   }`}
                 >
@@ -727,21 +601,40 @@ export default function TaxiBookingHero() {
               </div>
             </div>
 
-            {/* Address fields */}
+            {/* Address fields with Google Autocomplete Suggestions */}
             <div className="space-y-3.5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-medium text-gray-700 mb-1">Pickup Address</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-                    <input type="text" name="pickupAddress" value={formData.pickupAddress} onChange={handleInputChange} required placeholder="Pickup Location" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500" />
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 z-10" />
+                    {isLoaded ? (
+                      <Autocomplete
+                        onLoad={(autocomplete) => (pickupAutocompleteRef.current = autocomplete)}
+                        onPlaceChanged={onPickupPlaceChanged}
+                      >
+                        <input type="text" name="pickupAddress" value={formData.pickupAddress} onChange={handleInputChange} required placeholder={loadError ? "Enter Pickup Location" : "Typing shows options..."} className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
+                      </Autocomplete>
+                    ) : (
+                      <input type="text" name="pickupAddress" value={formData.pickupAddress} onChange={handleInputChange} required placeholder="Loading map engine..." className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm opacity-60 cursor-not-allowed" disabled />
+                    )}
                   </div>
                 </div>
+
                 <div>
                   <label className="block text-xs font-medium text-gray-700 mb-1">Drop Address</label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-                    <input type="text" name="dropAddress" value={formData.dropAddress} onChange={handleInputChange} required placeholder="Drop Location" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500" />
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 z-10" />
+                    {isLoaded ? (
+                      <Autocomplete
+                        onLoad={(autocomplete) => (dropAutocompleteRef.current = autocomplete)}
+                        onPlaceChanged={onDropPlaceChanged}
+                      >
+                        <input type="text" name="dropAddress" value={formData.dropAddress} onChange={handleInputChange} required placeholder={loadError ? "Enter Drop Location" : "Typing shows options..."} className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
+                      </Autocomplete>
+                    ) : (
+                      <input type="text" name="dropAddress" value={formData.dropAddress} onChange={handleInputChange} required placeholder="Loading map engine..." className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm opacity-60 cursor-not-allowed" disabled />
+                    )}
                   </div>
                 </div>
               </div>
@@ -751,15 +644,15 @@ export default function TaxiBookingHero() {
                 <div>
                   <label className="block text-xs font-medium text-gray-700 mb-1">Full Name</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-                    <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} required placeholder="Full Name" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500" />
+                    <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} required placeholder="Full Name" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-gray-700 mb-1">Mobile Number</label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
-                    <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange} required placeholder="Mobile Number" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500" />
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500" />
+                    <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange} required placeholder="Mobile Number" className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
                   </div>
                 </div>
               </div>
@@ -769,15 +662,15 @@ export default function TaxiBookingHero() {
                 <div>
                   <label className="block text-xs font-medium text-gray-700 mb-1">Pickup Date</label>
                   <div className="relative">
-                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500 pointer-events-none" />
-                    <input type="date" name="pickupDate" value={formData.pickupDate} onChange={handleInputChange} required className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500" />
+                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 pointer-events-none" />
+                    <input type="date" name="pickupDate" value={formData.pickupDate} onChange={handleInputChange} required className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-xs font-medium text-gray-700 mb-1">Pickup Time</label>
                   <div className="relative">
-                    <Clock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500 pointer-events-none" />
-                    <input type="time" name="pickupTime" value={formData.pickupTime} onChange={handleInputChange} required className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500" />
+                    <Clock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 pointer-events-none" />
+                    <input type="time" name="pickupTime" value={formData.pickupTime} onChange={handleInputChange} required className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
                   </div>
                 </div>
               </div>
@@ -788,18 +681,18 @@ export default function TaxiBookingHero() {
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
                     <label className="block text-xs font-medium text-gray-700 mb-1">Return Date</label>
                     <div className="relative">
-                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500 pointer-events-none" />
-                      <input type="date" name="returnDate" value={formData.returnDate} onChange={handleInputChange} required={tripType === "round-trip"} className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-emerald-500" />
+                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500 pointer-events-none" />
+                      <input type="date" name="returnDate" value={formData.returnDate} onChange={handleInputChange} required={tripType === "round-trip"} className="w-full pl-10 pr-3 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500" />
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              {/* Dynamic Select Vehicle List with Custom Bata Sub-label */}
+              {/* Dynamic Select Vehicle List */}
               <div>
                 <div className="flex justify-between items-center mb-1.5">
                   <label className="block text-xs font-semibold text-gray-700 uppercase">Select Vehicle</label>
-                  <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">
+                  <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md">
                     Driver Bata: {activeVehicleObject?.bata}
                   </span>
                 </div>
@@ -807,11 +700,11 @@ export default function TaxiBookingHero() {
                   spaceBetween={8}
                   slidesPerView={3.5}
                   modules={[Autoplay]} 
-    autoplay={{
-      delay: 1000, 
-      disableOnInteraction: false, 
-      pauseOnMouseEnter: true, 
-    }}
+                  autoplay={{
+                    delay: 2000, 
+                    disableOnInteraction: false, 
+                    pauseOnMouseEnter: true, 
+                  }}
                   breakpoints={{
                     0: { slidesPerView: 2.5 },
                     400: { slidesPerView: 3.2 },
@@ -825,7 +718,7 @@ export default function TaxiBookingHero() {
                         onClick={() => setSelectedVehicle(vehicle.id)}
                         className={`cursor-pointer p-2 rounded-xl border text-center transition flex flex-col items-center justify-between h-[84px] m-1 bg-white ${
                           selectedVehicle === vehicle.id
-                            ? "border-emerald-500 bg-emerald-50/20 ring-1 ring-emerald-500"
+                            ? "border-blue-500 bg-blue-50/20 ring-1 ring-blue-500"
                             : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
@@ -833,7 +726,7 @@ export default function TaxiBookingHero() {
                           <img src={vehicle.img} alt={vehicle.name} className="h-full object-contain max-w-full rounded" />
                         </div>
                         <div>
-                          <div className="text-[10px] font-bold text-emerald-600 leading-none">{vehicle.price}</div>
+                          <div className="text-[10px] font-bold text-blue-700 leading-none">{vehicle.price}</div>
                           <div className="text-[8px] text-gray-900 font-black mt-0.5 uppercase tracking-wide">{vehicle.name}</div>
                         </div>
                       </div>
@@ -843,7 +736,7 @@ export default function TaxiBookingHero() {
               </div>
             </div>
 
-            <button type="submit" className="w-full mt-5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition tracking-wide text-center shadow-md">
+            <button type="submit" className="w-full mt-5 bg-blue-700 hover:bg-blue-800 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition tracking-wide text-center shadow-md">
               Book Now
             </button>
             <span className="text-xs text-center text-gray-700 font-medium mt-2">Toll Gate, State Permit, Hill Station, Parking - Charges Extra.</span>

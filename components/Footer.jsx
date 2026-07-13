@@ -55,13 +55,13 @@ export default function Footer() {
                   alt="One Way Taxi Bala Logo"
                   fill
                   sizes="48px"
-                  className="object-cover border-2 rounded-full border-emerald-500/20"
+                  className="object-cover border-2 rounded-full border-blue-500/20"
                 />
               </div>
               <div className="flex flex-col justify-center leading-tight">
                 <p className="text-base font-black uppercase text-white tracking-tight">
-                Green
-                  <span className="ml-1 text-emerald-500">Tours & Travels</span>
+                Ganapathy
+                  <span className="ml-1 text-yellow-500"> Travels</span>
                 </p>
                 <p className="text-[11px] font-bold text-gray-500 tracking-wider uppercase">
                   Premium Ride Experience
@@ -75,11 +75,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2.5 pt-2 text-sm text-gray-300 font-medium">
               <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-emerald-500 shrink-0" />
+                <Clock className="w-4 h-4 text-blue-500 shrink-0" />
                 <span>24/7 Booking Support Available</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-blue-500 shrink-0" />
                 <span>Verified Clean Vehicles & Drivers</span>
               </div>
             </div>
@@ -87,14 +87,14 @@ export default function Footer() {
 
           {/* COLUMN 2: SERVICES LINKS */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-white text-xs font-black uppercase tracking-widest border-l-2 border-emerald-500 pl-2.5">
+            <h4 className="text-white text-xs font-black uppercase tracking-widest border-l-2 border-blue-500 pl-2.5">
               Our Services
             </h4>
             <ul className="space-y-2.5 text-sm">
               {SERVICES.map((item, idx) => (
                 <li key={idx}>
                   <Link href={item.link} className="hover:text-white transition-colors flex items-center gap-1 group">
-                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-emerald-500 -ml-4 group-hover:ml-0" />
+                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-blue-500 -ml-4 group-hover:ml-0" />
                     <span>{item.name}</span>
                   </Link>
                 </li>
@@ -104,14 +104,14 @@ export default function Footer() {
 
           {/* COLUMN 3: POPULAR ROUTES */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-white text-xs font-black uppercase tracking-widest border-l-2 border-emerald-500 pl-2.5">
+            <h4 className="text-white text-xs font-black uppercase tracking-widest border-l-2 border-blue-500 pl-2.5">
               Popular Routes
             </h4>
             <ul className="space-y-2.5 text-sm">
               {TOP_ROUTES.map((item, idx) => (
                 <li key={idx}>
                   <Link href={item.link} className="hover:text-white transition-colors flex items-center gap-1 group">
-                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-emerald-500 -ml-4 group-hover:ml-0" />
+                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-blue-500 -ml-4 group-hover:ml-0" />
                     <span>{item.name}</span>
                   </Link>
                 </li>
@@ -121,16 +121,16 @@ export default function Footer() {
 
           {/* COLUMN 4: DIRECT CONTACT CONTACT INFO */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-white text-xs font-black uppercase tracking-widest border-l-2 border-emerald-500 pl-2.5">
+            <h4 className="text-white text-xs font-black uppercase tracking-widest border-l-2 border-blue-500 pl-2.5">
               Need Assistance?
             </h4>
             
             <div className="space-y-3.5 pt-1">
               <a 
                 href="tel:+919677792455" 
-                className="flex items-center gap-3 p-3 bg-gray-900/40 border border-gray-800 rounded-xl hover:border-emerald-500 transition-colors group shadow-inner"
+                className="flex items-center gap-3 p-3 bg-gray-900/40 border border-gray-800 rounded-xl hover:border-blue-500 transition-colors group shadow-inner"
               >
-                <Phone className="w-4 h-4 text-emerald-500 fill-current group-hover:scale-105 transition-transform" />
+                <Phone className="w-4 h-4 text-blue-500 fill-current group-hover:scale-105 transition-transform" />
                 <div className="min-w-0">
                   <span className="block text-[9px] uppercase font-bold text-gray-500 tracking-wider">Call Support</span>
                   <span className="block text-sm font-black text-white tracking-wide">+91 88255 55154</span>
@@ -151,7 +151,7 @@ export default function Footer() {
               </a>
 
               <div className="flex items-start gap-3 px-1 pt-1 text-xs text-gray-400 leading-relaxed">
-                <MapPin className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
                 <span>Headquartered in Tamil Nadu, serving all primary sectors across South India.</span>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function Footer() {
         {/* BOTTOM METADATA / LEGAL SUMMARY BAR */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 text-xs gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-center sm:text-left">
-            <span>&copy; {currentYear} <span className="text-gray-200 font-bold">Green Tours & Travels </span>. All rights reserved.</span>
+            <span>&copy; {currentYear} <span className="text-gray-200 font-bold">Ganapathy Travels </span>. All rights reserved.</span>
             <div className="hidden sm:inline text-gray-700">|</div>
             <div className="flex items-center gap-4">
               <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
@@ -172,13 +172,13 @@ export default function Footer() {
 
           {/* HIGH PREMIUM DEVELOPED BY BRAND BADGE ELEMENT */}
           <div className="flex items-center gap-2 bg-gray-900/60 border border-gray-800/80 px-4 py-2 rounded-xl text-gray-400 font-medium">
-            <Terminal className="w-3.5 h-3.5 text-emerald-500" />
+            <Terminal className="w-3.5 h-3.5 text-blue-500" />
             <span>Developed by</span>
             <a 
               href="https://wepzite.in" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-white font-black tracking-wide hover:text-emerald-400 transition-colors uppercase flex items-center gap-0.5 border-b border-dashed border-gray-600 hover:border-emerald-400"
+              className="text-white font-black tracking-wide hover:text-blue-400 transition-colors uppercase flex items-center gap-0.5 border-b border-dashed border-gray-600 hover:border-blue-400"
             >
               wepzite.in
             </a>
@@ -200,7 +200,7 @@ export default function Footer() {
         </a>
         <a
           href="tel:+919677792455"
-          className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase shadow-sm active:scale-[0.99] transition-transform"
+          className="flex items-center justify-center gap-2 bg-blue-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase shadow-sm active:scale-[0.99] transition-transform"
         >
           <Phone className="w-4 h-4 fill-current" />
           Call Support

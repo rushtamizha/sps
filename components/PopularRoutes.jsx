@@ -10,23 +10,23 @@ const ROUTES_DATA = [
     tag: "Most Booked",
     tagColor: "bg-amber-500 text-white",
     title: "Chennai One Way Taxi",
-    desc: "Book one way taxi to Chennai with Green Tours & Travels for reliable intercity travel, airport transfers and business trips.",
+    desc: "Book one way taxi to Chennai with blue Tours & Travels for reliable intercity travel, airport transfers and business trips.",
     labels: ["Airport Transfers", "Business Travel", "City Rides"],
     img: "/PopularRoutes/Chennai.jpg",
   },
   {
     id: 2,
     tag: "Business Travel",
-    tagColor: "bg-emerald-600 text-white",
+    tagColor: "bg-blue-700 text-white",
     title: "Bangalore One Way Taxi",
-    desc: "Travel to Bangalore with Green Tours & Travels for comfortable long distance and corporate travel.",
+    desc: "Travel to Bangalore with blue Tours & Travels for comfortable long distance and corporate travel.",
     labels: ["IT Hub", "Corporate Trips", "Night Travel"],
     img: "/PopularRoutes/Bangalore.jpg",
   },
   {
     id: 3,
     tag: "Popular Route",
-    tagColor: "bg-emerald-600 text-white",
+    tagColor: "bg-blue-700 text-white",
     title: "Coimbatore One Way Taxi",
     desc: "Reliable one way taxi to Coimbatore with clean vehicles and professional drivers for smooth travel.",
     labels: ["Business Trips", "City Travel", "Industrial Hub"],
@@ -35,7 +35,7 @@ const ROUTES_DATA = [
   {
     id: 4,
     tag: "Temple Travel",
-    tagColor: "bg-orange-600 text-white",
+    tagColor: "bg-green-600 text-white",
     title: "Madurai One Way Taxi",
     desc: "Book one way taxi to Madurai for temple visits, family travel and comfortable intercity journeys.",
     labels: ["Temple Visits", "Heritage City", "Family Trips"],
@@ -46,7 +46,7 @@ const ROUTES_DATA = [
     tag: "Intercity Travel",
     tagColor: "bg-slate-600 text-white",
     title: "Trichy One Way Taxi",
-    desc: "Travel to Trichy with Green Tours & Travels for temple visits, business trips and city travel.",
+    desc: "Travel to Trichy with blue Tours & Travels for temple visits, business trips and city travel.",
     labels: ["Temple Visits", "City Travel", "Family Trips"],
     img: "/PopularRoutes/Trichy.jpg",
   },
@@ -55,7 +55,7 @@ const ROUTES_DATA = [
     tag: "Intercity Travel",
     tagColor: "bg-slate-600 text-white",
     title: "Salem One Way Taxi",
-    desc: "Book one way taxi to Salem with Green Tours & Travels for comfortable intercity travel, business trips and temple visits.",
+    desc: "Book one way taxi to Salem with blue Tours & Travels for comfortable intercity travel, business trips and temple visits.",
     labels: ["City Travel", "Business Trips", "Temple Visits"],
     img: "/PopularRoutes/Salem.jpg",
   },
@@ -73,7 +73,7 @@ const ROUTES_DATA = [
     tag: "Tourism",
     tagColor: "bg-teal-600 text-white",
     title: "Mysore One Way Taxi",
-    desc: "Travel to Mysore with Green Tours & Travels for palace visits and sightseeing trips.",
+    desc: "Travel to Mysore with blue Tours & Travels for palace visits and sightseeing trips.",
     labels: ["Palace Tours", "Heritage Travel", "City Trips"],
     img: "/PopularRoutes/Mysore.webp",
   },
@@ -91,7 +91,7 @@ const ROUTES_DATA = [
     tag: "Leisure Travel",
     tagColor: "bg-pink-600 text-white",
     title: "Alleppey One Way Taxi",
-    desc: "Travel to Alleppey with Green Tours & Travels for scenic backwater experiences.",
+    desc: "Travel to Alleppey with blue Tours & Travels for scenic backwater experiences.",
     labels: ["Backwaters", "Leisure Trips", "Tourism"],
     img: "/PopularRoutes/Alleppey.jpg",
   },
@@ -118,7 +118,7 @@ const ROUTES_DATA = [
     tag: "Hill Travel",
     tagColor: "bg-sky-600 text-white",
     title: "Valparai One Way Taxi",
-    desc: "Travel to Valparai with Green Tours & Travels and experience scenic hairpin bends and tea estate roads.",
+    desc: "Travel to Valparai with blue Tours & Travels and experience scenic hairpin bends and tea estate roads.",
     labels: ["Hairpin Roads", "Tea Estates", "Nature Travel"],
     img: "/PopularRoutes/valparai.jpg",
   },
@@ -136,7 +136,7 @@ const ROUTES_DATA = [
     tag: "Hill Travel",
     tagColor: "bg-sky-600 text-white",
     title: "Munnar One Way Taxi",
-    desc: "Enjoy scenic travel to Munnar with Green Tours & Travels through tea plantations.",
+    desc: "Enjoy scenic travel to Munnar with blue Tours & Travels through tea plantations.",
     labels: ["Tea Estates", "Hill Views", "Leisure Travel"],
     img: "/PopularRoutes/Munnar.jpg",
   },
@@ -154,7 +154,7 @@ const ROUTES_DATA = [
     tag: "Pilgrimage",
     tagColor: "bg-rose-600 text-white",
     title: "Rameshwaram One Way Taxi",
-    desc: "Travel to Rameshwaram with Green Tours & Travels for temple visits and coastal journeys.",
+    desc: "Travel to Rameshwaram with blue Tours & Travels for temple visits and coastal journeys.",
     labels: ["Temple Travel", "Coastal Roads", "Spiritual Travel"],
     img: "/PopularRoutes/Rameshwaram.webp",
   },
@@ -179,9 +179,9 @@ const ROUTES_DATA = [
   {
     id: 20,
     tag: "Heritage Travel",
-    tagColor: "bg-purple-600 text-white",
+    tagColor: "bg-blue-600 text-white",
     title: "Thanjavur One Way Taxi",
-    desc: "Travel to Thanjavur with Green Tours & Travels for temple visits, heritage travel and cultural sightseeing.",
+    desc: "Travel to Thanjavur with blue Tours & Travels for temple visits, heritage travel and cultural sightseeing.",
     labels: ["Temple Tourism", "Heritage Sites", "Cultural Travel"],
     img: "/PopularRoutes/Thanjavur.jpg",
   },
@@ -204,13 +204,13 @@ export default function PopularRoutes() {
         {/* HEADER AREA */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 bg-emerald-50 text-emerald-600 font-bold text-xs uppercase px-3 py-1.5 rounded-full w-max ">
+            <div className="flex items-center gap-2 bg-blue-50 text-blue-700 font-bold text-xs uppercase px-3 py-1.5 rounded-full w-max ">
               <Navigation className="w-3.5 h-3.5" />
               Popular Outstation Routes
             </div>
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 tracking-tight ">
               Explore Frequently Booked <br />
-              <span className="text-emerald-600">Of Taxi Routes</span>
+              <span className="text-blue-700">Of Taxi Routes</span>
             </h2>
             <p className="text-gray-500 text-xs   md:text-sm font-medium">
               Travel across Tamil Nadu and South India with safe drivers, clean vehicles, and complete transparent pricing structure.
@@ -247,8 +247,8 @@ export default function PopularRoutes() {
               {/* Main Contents Panel */}
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-start gap-2 mb-2">
-                  <MapPin className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
-                  <h3 className="text-xl font-semibold text-gray-900  group-hover:text-emerald-600 transition-colors">
+                  <MapPin className="w-4 h-4 text-blue-700 shrink-0 mt-1" />
+                  <h3 className="text-xl font-semibold text-gray-900  group-hover:text-blue-700 transition-colors">
                     {route.title}
                   </h3>
                 </div>
@@ -269,7 +269,7 @@ export default function PopularRoutes() {
                 <hr className="border-gray-100 mb-4" />
 
                 {/* Status indicator line */}
-                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 mb-4">
+                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-blue-700 mb-4">
                   <CheckCircle2 className="w-3.5 h-3.5 fill-current text-white" />
                   <span>Available for booking</span>
                 </div>
@@ -280,13 +280,13 @@ export default function PopularRoutes() {
                     href="https://wa.me/919677792455"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center gap-1.5 bg-orange-600 text-white font-bold py-3 px-2 rounded-xl text-[11px] uppercase  hover:bg-orange-700 transition text-center shadow-sm"
+                    className="flex items-center justify-center gap-1.5 bg-green-600 text-white font-bold py-3 px-2 rounded-xl text-[11px] uppercase  hover:bg-green-700 transition text-center shadow-sm"
                   >
                     <MessageSquare className="w-3.5 h-3.5 fill-current" /> WA Fare
                   </a>
                   <a
                     href="tel:+919677792455"
-                    className="flex items-center justify-center gap-1.5 bg-emerald-600 text-white font-bold py-3 px-2 rounded-xl text-[11px] uppercase  hover:bg-emerald-700 transition text-center shadow-sm"
+                    className="flex items-center justify-center gap-1.5 bg-blue-700 text-white font-bold py-3 px-2 rounded-xl text-[11px] uppercase  hover:bg-blue-700 transition text-center shadow-sm"
                   >
                     <Phone className="w-3.5 h-3.5 fill-current" /> Call Now
                   </a>

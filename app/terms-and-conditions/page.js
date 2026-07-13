@@ -38,7 +38,7 @@ export default function TermsAndConditions() {
         
         {/* HERO TITLE HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-          <div className="flex items-center justify-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
+          <div className="flex items-center justify-center gap-2 text-blue-700 font-bold text-xs uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full w-max mx-auto">
             <Scale className="w-3.5 h-3.5" />
             Legal & Policy Framework
           </div>
@@ -67,7 +67,7 @@ export default function TermsAndConditions() {
                     onClick={() => scrollToSection(sec.id)}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-left transition-all ${
                       activeSection === sec.id
-                        ? 'bg-emerald-600 text-white shadow-xs shadow-emerald-600/10'
+                        ? 'bg-blue-700 text-white shadow-xs shadow-blue-700/10'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }`}
                   >
@@ -85,21 +85,21 @@ export default function TermsAndConditions() {
             {/* INTRODUCTION */}
             <section id="introduction" className="space-y-3 scroll-mt-28">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 flex items-center gap-2.5 pb-2 border-b border-gray-100">
-                <FileText className="w-5 h-5 text-emerald-600" />
+                <FileText className="w-5 h-5 text-blue-700" />
                 1. Introduction & Overview
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Welcome to Green Tours & Travels. By accessing our platform, utilizing our online booking tools, or using our phone/WhatsApp booking channels, you agree to comply with and be bound by the following terms and conditions.
+                Welcome to blue Tours & Travels. By accessing our platform, utilizing our online booking tools, or using our phone/WhatsApp booking channels, you agree to comply with and be bound by the following terms and conditions.
               </p>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                These terms govern all intercity, one-way, round-trip, and airport transfer transit services managed or arranged by Green Tours & Travels across Tamil Nadu and Pondicherry.
+                These terms govern all intercity, one-way, round-trip, and airport transfer transit services managed or arranged by blue Tours & Travels across Tamil Nadu and Pondicherry.
               </p>
             </section>
 
             {/* BOOKING */}
             <section id="booking" className="space-y-3 scroll-mt-28">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 flex items-center gap-2.5 pb-2 border-b border-gray-100">
-                <CheckCircle className="w-5 h-5 text-emerald-600" />
+                <CheckCircle className="w-5 h-5 text-blue-700" />
                 2. Booking & Confirmation
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -107,14 +107,14 @@ export default function TermsAndConditions() {
               </p>
               <ul className="list-disc pl-5 text-gray-600 text-sm md:text-base space-y-1.5 pt-1">
                 <li>Bookings are confirmed only after a formal booking confirmation message or digital receipt is transmitted to your registered mobile number or email address.</li>
-                <li>The passenger must provide accurate pickup addresses, destination details, contact information, and desired departure timings. Green Tours & Travels is not responsible for delayed execution resulting from inaccurate input data.</li>
+                <li>The passenger must provide accurate pickup addresses, destination details, contact information, and desired departure timings. blue Tours & Travels is not responsible for delayed execution resulting from inaccurate input data.</li>
               </ul>
             </section>
 
             {/* PRICING */}
             <section id="pricing" className="space-y-3 scroll-mt-28">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 flex items-center gap-2.5 pb-2 border-b border-gray-100">
-                <Scale className="w-5 h-5 text-emerald-600" />
+                <Scale className="w-5 h-5 text-blue-700" />
                 3. Pricing, Fares & Tolls
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -131,7 +131,7 @@ export default function TermsAndConditions() {
             {/* CANCELLATION */}
             <section id="cancellation" className="space-y-3 scroll-mt-28">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 flex items-center gap-2.5 pb-2 border-b border-gray-100">
-                <Clock className="w-5 h-5 text-emerald-600" />
+                <Clock className="w-5 h-5 text-blue-700" />
                 4. Cancellation & Refund Policy
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -146,7 +146,7 @@ export default function TermsAndConditions() {
             {/* RESPONSIBILITIES */}
             <section id="responsibilities" className="space-y-3 scroll-mt-28">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 flex items-center gap-2.5 pb-2 border-b border-gray-100">
-                <Shield className="w-5 h-5 text-emerald-600" />
+                <Shield className="w-5 h-5 text-blue-700" />
                 5. Passenger Responsibilities
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -161,11 +161,11 @@ export default function TermsAndConditions() {
             {/* DISCLAIMER */}
             <section id="disclaimer" className="space-y-3 scroll-mt-28">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 flex items-center gap-2.5 pb-2 border-b border-gray-100">
-                <AlertTriangle className="w-5 h-5 text-emerald-600" />
+                <AlertTriangle className="w-5 h-5 text-blue-700" />
                 6. Disclaimers & Limitations
               </h2>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                While our drivers make every effort to arrive ahead of your scheduled time, Green Tours & Travels is not legally liable for delayed arrivals caused by unavoidable external forces. These include severe regional weather events, sudden highway gridlocks, force majeure incidents, or vehicle mechanical breakdowns en route.
+                While our drivers make every effort to arrive ahead of your scheduled time, blue Tours & Travels is not legally liable for delayed arrivals caused by unavoidable external forces. These include severe regional weather events, sudden highway gridlocks, force majeure incidents, or vehicle mechanical breakdowns en route.
               </p>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 In the rare event of a mechanical failure during a trip, our central support grid will prioritize dispatching a replacement fleet alternative as quickly as possible to ensure minimal disruption to your travel itinerary.
@@ -177,7 +177,7 @@ export default function TermsAndConditions() {
 
         {/* BOTTOM QUICK RESOLUTION ACTION BAR */}
         <div className="mt-12 bg-gray-900 rounded-[2rem] p-8 text-center text-white relative overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/40 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 via-transparent to-transparent pointer-events-none" />
           <h3 className="text-xl md:text-2xl font-semibold  mb-2">
             Have Questions Regarding Our Policies?
           </h3>
@@ -187,7 +187,7 @@ export default function TermsAndConditions() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="tel:+919677792455"
-              className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
+              className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
             >
               <Phone className="w-4 h-4 fill-current" />
               Call Support Line
