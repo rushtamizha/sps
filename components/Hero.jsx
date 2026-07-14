@@ -425,20 +425,21 @@ const BACKGROUND_IMAGES = ["/download.avif"];
 const VEHICLES_DATABASE = {
   "one-way": [
     { id: "sedan", name: "SEDAN", price: 15, bata: 400, maxPax: 4, img: "/BookingCars/swift-dzire-taxi.avif" },
-    { id: "etios", name: "ETIOS", price: 15, bata: 400, maxPax: 4, img: "/BookingCars/swift-dzire-taxi.avif" },
-    { id: "ciaz", name: "CIAZ", price: 16, bata: 400, maxPax: 4, img: "/BookingCars/swift-dzire-taxi.avif" },
-    { id: "ertiga", name: "ERTIGA", price: 15, bata: 400, maxPax: 6, img: "/BookingCars/swift-dzire-taxi.avif" },
+    { id: "etios", name: "ETIOS", price: 15, bata: 400, maxPax: 4, img: "/BookingCars/etios-taxi.avif" },
+    { id: "ciaz", name: "CIAZ", price: 16, bata: 400, maxPax: 4, img: "/BookingCars/etios-taxi.avif" },
+    { id: "ertiga", name: "ERTIGA", price: 15, bata: 400, maxPax: 6, img: "/BookingCars/marazzo-taxi.avif" },
     { id: "carens", name: "KIA CARENS", price: 14, bata: 400, maxPax: 6, img: "/BookingCars/carren.avif" },
-    { id: "innova", name: "INNOVA", price: 19, bata: 500, maxPax: 7, img: "/BookingCars/marazzo-taxi.avif" },
+    { id: "innova", name: "INNOVA", price: 19, bata: 500, maxPax: 7, img: "/BookingCars/innova-taxi.avif" },
     { id: "crysta", name: "CRYSTA", price: 22, bata: 600, maxPax: 7, img: "/BookingCars/innova-taxi.avif" },
     { id: "tempo-12", name: "TEMPO 12", price: 24, bata: 1000, maxPax: 12, img: "/BookingCars/tempo.avif" },
   ],
   "round-trip": [
     { id: "sedan", name: "SEDAN", price: 14, bata: 400, maxPax: 4, img: "/BookingCars/swift-dzire-taxi.avif" },
     { id: "ciaz", name: "CIAZ", price: 14, bata: 400, maxPax: 4, img: "/BookingCars/swift-dzire-taxi.avif" },
-    { id: "ertiga", name: "ERTIGA", price: 14, bata: 400, maxPax: 6, img: "/BookingCars/swift-dzire-taxi.avif" },
+     { id: "etios", name: "ETIOS", price: 15, bata: 400, maxPax: 4, img: "/BookingCars/etios-taxi.avif" },
+    { id: "ertiga", name: "ERTIGA", price: 14, bata: 400, maxPax: 6, img: "/BookingCars/marazzo-taxi.avif" },
     { id: "carens", name: "KIA CARENS", price: 14, bata: 400, maxPax: 6, img: "/BookingCars/carren.avif" },
-    { id: "innova", name: "INNOVA", price: 19, bata: 500, maxPax: 7, img: "/BookingCars/marazzo-taxi.avif" },
+    { id: "innova", name: "INNOVA", price: 19, bata: 500, maxPax: 7, img: "/BookingCars/innova-taxi.avif" },
     { id: "crysta", name: "CRYSTA", price: 22, bata: 600, maxPax: 7, img: "/BookingCars/innova-taxi.avif" },
     { id: "tempo-12", name: "TEMPO 12", price: 24, bata: 1000, maxPax: 12, img: "/BookingCars/tempo.avif" },
   ]
