@@ -40,7 +40,7 @@ export default function ContactSection() {
                 
                 {/* Call Card */}
                 <a 
-                  href="tel:+919677792455" 
+                  href="tel:+919626850192" 
                   className="p-5 border border-gray-100 hover:bg-blue-50 rounded-2xl flex items-start gap-4 hover:border-blue-500 bg-white  transition-all group shadow-xs"
                 >
                   <div className="p-3 bg-blue-50 rounded-xl text-blue-700 group-hover:bg-blue-700 group-hover:text-white transition-colors">
@@ -49,19 +49,19 @@ export default function ContactSection() {
                   <div>
                     <h4 className="text-xs font-semibold text-gray-400 uppercase ">Call Support</h4>
                     <p className="text-base font-extrabold text-gray-900 mt-0.5 group-hover:text-blue-700 transition-colors">
-                      +91 9677792455
+                      +91 9626850192
                     </p>
                   </div>
                 </a>
 
                 {/* WhatsApp Card */}
                 <a 
-                  href="https://wa.me/919677792455" 
+                  href="https://wa.me/919626850192" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="p-5 border border-gray-100 hover:bg-blue-50 rounded-2xl flex items-start gap-4 hover:border-[#25d366] bg-white transition-all group shadow-xs"
+                  className="p-5 border border-gray-100 hover:bg-green-50 rounded-2xl flex items-start gap-4 hover:border-[#25d366] bg-white transition-all group shadow-xs"
                 >
-                  <div className="p-3 bg-blue-50 rounded-xl text-[#25d366] group-hover:bg-[#25d366] group-hover:text-white transition-colors">
+                  <div className="p-3 bg-green-50 rounded-xl text-[#25d366] group-hover:bg-[#25d366] group-hover:text-white transition-colors">
                     <MessageSquare className="w-5 h-5 fill-current" />
                   </div>
                   <div>
@@ -75,7 +75,7 @@ export default function ContactSection() {
                 {/* Email Card */}
                 <a 
                   href="mailto:a.karthikmmv@gmail.com" 
-                  className="p-5 border border-gray-100 hover:bg-green-50 rounded-2xl flex items-start gap-4 hover:border-green-500 bg-white transition-all group shadow-xs sm:col-span-2"
+                  className="p-5 border hidden border-gray-100 hover:bg-green-50 rounded-2xl flex items-start gap-4 hover:border-green-500 bg-white transition-all group shadow-xs sm:col-span-2"
                 >
                   <div className="p-3 bg-green-50 rounded-xl text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors">
                     <Mail className="w-5 h-5" />
@@ -89,7 +89,7 @@ export default function ContactSection() {
                 </a>
 
                 {/* Service Area Card */}
-                <div className="p-5 border border-gray-100 bg-gray-50/50 rounded-2xl flex items-start gap-4 sm:col-span-2 shadow-xs hover:bg-violet-50">
+                <div className="p-5 border border-gray-100 bg-gray-50/50 rounded-2xl flex items-start gap-4 sm:col-span-2 shadow-xs hover:bg-violet-50 hidden">
                   <div className="p-3 bg-violet-50 rounded-xl text-violet-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                     <MapPin className="w-5 h-5" />
                   </div>
@@ -129,18 +129,18 @@ export default function ContactSection() {
               {/* ACTION CALL DRIVERS INTERACTION */}
               <div className="space-y-3.5 w-full">
                 <a
-                  href="https://wa.me/919677792455"
+                  href="https://wa.me/919626850192"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center gap-3 bg-blue-700 hover:bg-[#20ba5a] text-white font-extrabold py-4 px-6 rounded-2xl text-sm uppercase  shadow-lg transition text-center"
+                  className="flex items-center justify-center gap-3 bg-green-500 hover:bg-[#005e24] text-white font-extrabold py-4 px-6 rounded-2xl text-sm uppercase  shadow-lg transition text-center"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
                   Get Fare on WhatsApp
                 </a>
 
                 <a
-                  href="tel:+919677792455"
-                  className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-extrabold py-4 px-6 rounded-2xl text-sm uppercase  shadow-lg transition text-center"
+                  href="tel:+919626850192"
+                  className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-4 px-6 rounded-2xl text-sm uppercase  shadow-lg transition text-center"
                 >
                   <Phone className="w-4 h-4 fill-current" />
                   Call Now

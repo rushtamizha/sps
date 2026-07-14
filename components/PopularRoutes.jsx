@@ -277,7 +277,7 @@ export default function PopularRoutes() {
                 {/* Interactive Action Layout Panel */}
                 <div className="grid grid-cols-2 gap-2.5 mt-auto">
                   <a
-                    href="https://wa.me/919677792455"
+                    href="https://wa.me/919626850192"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center gap-1.5 bg-green-600 text-white font-bold py-3 px-2 rounded-xl text-[11px] uppercase  hover:bg-green-700 transition text-center shadow-sm"
@@ -285,7 +285,7 @@ export default function PopularRoutes() {
                     <MessageSquare className="w-3.5 h-3.5 fill-current" /> WA Fare
                   </a>
                   <a
-                    href="tel:+919677792455"
+                    href="tel:+919626850192"
                     className="flex items-center justify-center gap-1.5 bg-blue-700 text-white font-bold py-3 px-2 rounded-xl text-[11px] uppercase  hover:bg-blue-700 transition text-center shadow-sm"
                   >
                     <Phone className="w-3.5 h-3.5 fill-current" /> Call Now

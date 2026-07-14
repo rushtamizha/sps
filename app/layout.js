@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     image: `${SITE_URL}/taxi-hero.png`,
-    telephone: "+91-9677792455",
+    telephone: "+91-9626850192",
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",

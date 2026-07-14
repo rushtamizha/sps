@@ -5,7 +5,7 @@ import { Phone } from 'lucide-react';
 import { BsWhatsapp } from 'react-icons/bs';
 
 const ContactButton = () => {
-  const phoneNumber = "919677792455";
+  const phoneNumber = "919626850192";
   const whatsappMessage = "Hi! I'd like to inquire about your services.";
 
   const actions = [

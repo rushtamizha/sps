@@ -51,7 +51,7 @@ export default function Footer() {
             >
               <div className="relative flex-shrink-0 transition-transform duration-300 h-12 w-12 group-hover:scale-105">
                 <Image
-                  src="/logo.png"
+                  src="/icon1.png"
                   alt="One Way Taxi Bala Logo"
                   fill
                   sizes="48px"
@@ -127,7 +127,7 @@ export default function Footer() {
             
             <div className="space-y-3.5 pt-1">
               <a 
-                href="tel:+919677792455" 
+                href="tel:+919626850192" 
                 className="flex items-center gap-3 p-3 bg-gray-900/40 border border-gray-800 rounded-xl hover:border-blue-500 transition-colors group shadow-inner"
               >
                 <Phone className="w-4 h-4 text-blue-500 fill-current group-hover:scale-105 transition-transform" />
@@ -138,7 +138,7 @@ export default function Footer() {
               </a>
 
               <a 
-                href="https://wa.me/919677792455" 
+                href="https://wa.me/919626850192" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="flex items-center gap-3 p-3 bg-gray-900/40 border border-gray-800 rounded-xl hover:border-[#25d366] transition-colors group shadow-inner"
@@ -190,7 +190,7 @@ export default function Footer() {
       {/* MOBILE STICKY FLOATING QUICK DOCK BAR */}
       <div className="hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-3 grid grid-cols-2 gap-2.5 z-[999] shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
         <a
-          href="https://wa.me/919677792455"
+          href="https://wa.me/919626850192"
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-center gap-2 bg-[#25d366] text-white font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase shadow-sm active:scale-[0.99] transition-transform"
@@ -199,7 +199,7 @@ export default function Footer() {
           WhatsApp
         </a>
         <a
-          href="tel:+919677792455"
+          href="tel:+919626850192"
           className="flex items-center justify-center gap-2 bg-blue-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase shadow-sm active:scale-[0.99] transition-transform"
         >
           <Phone className="w-4 h-4 fill-current" />

@@ -13,7 +13,8 @@ import {
   ChevronLeft, 
   ChevronRight, 
   PlaneTakeoff,
-  ShieldCheck
+  ShieldCheck,
+  Repeat
 } from 'lucide-react';
 
 // Import Swiper production styles
@@ -28,8 +29,9 @@ const TRANSFER_VEHICLES = [
     tag: 'MOST BOOKED',
     tagColor: 'bg-amber-500 text-white',
     capacity: '4+1',
-    one: '15/KM',
+    oneWay: '2,599',
     round: '14/KM',
+    local:"2,499",
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/swift-dzire-one-way-taxi-pondicherry-to-chennai.webp',
@@ -40,8 +42,9 @@ const TRANSFER_VEHICLES = [
     name: 'Toyota Etios / Sedan ',
     tag: null,
     capacity: '4+1',
-    one: '15/KM',
+    oneWay: '2,599',
     round: '14/KM',
+      local:"2,499",
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/toyota-etios-airport-taxi-pondicherry-to-chennai.webp',
@@ -52,8 +55,9 @@ const TRANSFER_VEHICLES = [
     name: 'Maruti Ciaz ',
     tag: null,
     capacity: '4+1',
-    one: '15/KM',
-    round: '14/KM',
+    oneWay: '2,799',
+    round: '15/KM',
+      local:false,
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/maruti-ciaz-premium-one-way-taxi-chennai-to-pondicherry.webp',
@@ -65,11 +69,25 @@ const TRANSFER_VEHICLES = [
     tag: 'FAMILY PICK',
     tagColor: 'bg-blue-700 text-white',
     capacity: '6+1',
-    one: '20/KM',
+    oneWay: '3,599',
     round: '19/KM',
+      local:"3,699",
     toll: 'Optional',
     luggage: 'Standard',
     img: '/CardCars/maruti-ertiga-6-plus-1-family-taxi-pondicherry-to-chennai.webp',
+    alt: 'Maruti Ertiga 6+1 family airport taxi booking from Pondicherry to Chennai'
+  },{
+    id: 'carens',
+    name: 'Kia Carens ',
+    tag: 'FAMILY PICK',
+    tagColor: 'bg-blue-700 text-white',
+    capacity: '6+1',
+    oneWay: '3,599',
+    round: '19/KM',
+      local:"3,699",
+    toll: 'Optional',
+    luggage: 'Standard',
+    img: '/CardCars/kia-carens.webp',
     alt: 'Maruti Ertiga 6+1 family airport taxi booking from Pondicherry to Chennai'
   },
   {
@@ -77,8 +95,9 @@ const TRANSFER_VEHICLES = [
     name: 'Toyota Innova ',
     tag: null,
     capacity: '7+1',
-   one: '20/KM',
+   oneWay: '3,899',
     round: '19/KM',
+      local:"4,099",
     toll: 'Optional',
     luggage: 'Large',
     img: '/CardCars/toyota-innova-7-seater-taxi-pondicherry-to-chennai.webp',
@@ -90,48 +109,13 @@ const TRANSFER_VEHICLES = [
     tag: 'PREMIUM',
     tagColor: 'bg-blue-700 text-white',
     capacity: '7+1',
-    one: '23/KM',
+    oneWay: '4,599',
     round: '21/KM',
+      local:"4,499",
     toll: 'Optional',
     luggage: 'Large',
     img: '/CardCars/toyota-innova-crysta-airport-taxi-pondicherry-to-chennai.webp',
     alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
-  },{
-    id: 'hycross',
-    name: ' Innova Hycross ',
-    tag: 'PREMIUM',
-    tagColor: 'bg-blue-700 text-white',
-    capacity: '7+1',
-    one: false,
-    round: '37/KM',
-    toll: 'Optional',
-    luggage: 'Large',
-    img: '/CardCars/innova-hycross-premium-taxi-pondicherry-to-chennai.webp',
-    alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
-  },{
-    id: 'urbania',
-    name: ' Urbania  ',
-    tag: 'PREMIUM',
-    tagColor: 'bg-blue-700 text-white',
-    capacity: '12+1',
-    one: false,
-    round: '35/KM',
-    toll: 'Optional',
-    luggage: 'Large',
-    img: '/CardCars/urbania.webp',
-    alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
-  },{
-    id: 'urbania',
-    name: ' Urbania  ',
-    tag: 'PREMIUM',
-    tagColor: 'bg-blue-700 text-white',
-    capacity: '16+1',
-    one:false,
-    round: '38/KM',
-    toll: 'Optional',
-    luggage: 'Large',
-    img: '/CardCars/urbania.webp',
-    alt: 'Toyota Innova Crysta premium airport taxi for luxury family travel from Pondicherry to Chennai'
   },
   {
     id: 'tempo',
@@ -139,26 +123,14 @@ const TRANSFER_VEHICLES = [
     tag: 'GROUP',
     tagColor: 'bg-blue-600 text-white',
     capacity: '12+1',
-     one: false,
-    round: '24/KM',
+     oneWay: "7,599",
+    round: false,
+      local:"5,599",
     toll: 'Optional',
     luggage: 'XL Space',
     img: '/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp',
     alt: '12 Seater Tempo Traveller group commercial van booking for Chennai and Pondicherry airport routes'
   },
-  {
-    id: 'tempo',
-    name: 'Tempo Traveller ',
-    tag: 'GROUP',
-    tagColor: 'bg-blue-600 text-white',
-    capacity: '18+1',
-     one: false,
-    round: '28/KM',
-    toll: 'Optional',
-    luggage: 'XL Space',
-    img: '/CardCars/tempo-traveller-12-seater-pondicherry-to-chennai-taxi.webp',
-    alt: '12 Seater Tempo Traveller group commercial van booking for Chennai and Pondicherry airport routes'
-  }
 ];
 
 export default function AirportTransfers() {
@@ -174,7 +146,7 @@ export default function AirportTransfers() {
               Fleets 
             </div>
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 tracking-tight ">
-              Pondicherry to Chennai <br />
+              Pondicherry <Repeat className='inline h-5 md:h-10'  color='blue'/> Chennai <br />
               <span className="text-blue-700"> Taxi</span>
             </h2>
             <p className="text-gray-500 text-xs   md:text-sm font-medium">
@@ -185,20 +157,9 @@ export default function AirportTransfers() {
         </div>
 
         {/* SWIPER CONTAINER LAYOUT */}
-        <div className="relative">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={24}
-            slidesPerView={1}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              1280: { slidesPerView: 3 },
-            }}
-            className="pb-16 w-full"
-          >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TRANSFER_VEHICLES.map((item,i) => (
-              <SwiperSlide key={i} className="h-auto">
+              <div key={i} className="h-auto">
                 <div className="bg-white rounded-[2rem] border border-gray-100 shadow-xs hover:shadow-sm transition-all duration-300 flex flex-col h-full overflow-hidden relative group m-0.5 m-2">
                   
                   {/* Badge Tag Component */}
@@ -224,7 +185,7 @@ export default function AirportTransfers() {
                   {/* Card Main Body */}
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-start justify-between gap-2 mb-3">
-                      <h3 className="text-md font-semibold text-gray-900  group-hover:text-blue-700 transition-colors line-clamp-1">
+                      <h3 className="text-md font-semibold text-gray-900   transition-colors line-clamp-1">
                         {item.name}
                       </h3>
                       <span className="flex items-center gap-1 bg-gray-100 text-gray-700 text-[11px] font-semibold px-2.5 py-1 rounded-md shrink-0">
@@ -233,27 +194,32 @@ export default function AirportTransfers() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1 text-[11px] font-medium text-blue-700 mb-4">
+                    <div className="flex items-center gap-1 text-[11px] font-medium text-emerald-700 mb-4">
                       <ShieldCheck className="w-3.5 h-3.5 fill-current " />
                       <span>Verified Active Route Fleet</span>
                     </div>
 
-                    <hr className="border-gray-100 mb-4" />
+                    <hr className="border-gray-100 " />
 
                     {/* Fare Details Grid */}
-                    <div className="space-y-3 text-sm flex-grow mb-6">
-                     { item.one && <div className="flex justify-between items-center bg-blue-50 p-2 rounded-xl border border-gray-100/50">
-                        <span className="text-blue-800 font-semibold pl-1">One Way</span>
-                        <span className="text-xl font-semibold text-blue-700 pr-1">₹{item.one}</span>
+                    <div className="space-y-3 text-sm flex-grow mb-6 hidden">
+                     { item.oneWay && <div className="flex justify-between items-center bg-red-50 p-2 rounded-xl border border-gray-100/50">
+                        <span className="text-red-800 font-semibold pl-1">One Way</span>
+                        <span className="text-xl font-semibold text-red-700 pr-1">₹{item.oneWay}</span>
                       </div> }
 
-                      <div className="flex justify-between items-center bg-amber-50 p-2 rounded-xl border border-gray-100/50">
+                      {item.round && <div className="flex justify-between items-center bg-amber-50 p-2 rounded-xl border border-gray-100/50">
                         <span className="text-amber-800 font-semibold pl-1">Round Trip</span>
                         <span className="text-xl font-semibold text-amber-600 pr-1">₹{item.round}</span>
-                      </div>
+                      </div>}
+
+                      {item.local&&<div className="flex justify-between items-center bg-green-50 p-2 rounded-xl border border-gray-100/50">
+                        <span className="text-green-800 font-semibold pl-1">Rent 8Hrs - 80/Km</span>
+                        <span className="text-xl font-semibold text-green-600 pr-1">₹{item.local}</span>
+                      </div>}
                       
-                      <div className="flex justify-between items-center px-1">
-                        <span className="text-gray-400 font-medium flex items-center gap-1.5">
+                      <div className="flex justify-between items-center px-1 hidden">
+                        <span className="text-gray-400 font-medium flex items-center gap-1.5 ">
                           <Receipt className="w-4 h-4 text-gray-400" /> Toll , Parking , Permit Charges
                         </span>
                         <span className="text-gray-700 font-medium text-sm bg-gray-100/10  px-2 py-0.5 rounded">
@@ -261,7 +227,7 @@ export default function AirportTransfers() {
                         </span>
                       </div>
                       
-                      <div className="flex justify-between items-center px-1">
+                      <div className="flex justify-between items-center px-1 hidden">
                         <span className="text-gray-400 font-medium flex items-center gap-1.5">
                           <Briefcase className="w-4 h-4 text-gray-400" /> Luggage Space
                         </span>
@@ -274,7 +240,7 @@ export default function AirportTransfers() {
                     {/* Action Execution Layer */}
                     <div className="space-y-2.5 mt-auto">
                       <a
-                        href={`https://wa.me/919677792455?text=Hi,%20I%20want%20to%20book%20an%20Vehicle%20${encodeURIComponent(item.name)}`}
+                        href={`https://wa.me/919626850192?text=Hi,%20I%20want%20to%20book%20an%20Vehicle%20${encodeURIComponent(item.name)}`}
                         target="_blank"
                         rel="noreferrer"
                         className="w-full flex items-center justify-center bg-blue-700 hover:bg-blue-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs  uppercase shadow-md transition-all text-center"
@@ -285,10 +251,8 @@ export default function AirportTransfers() {
 
                   </div>
                 </div>
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
-  
         </div>
 
       </div>

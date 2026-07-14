@@ -342,14 +342,14 @@ export default function FarePricing() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+919677792455"
+              href="tel:+919626850192"
               className="flex items-center justify-center gap-2.5 bg-blue-700 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
             >
               <Phone className="w-4 h-4 fill-current" />
               Call Now — Get Fare
             </a>
             <a
-              href="https://wa.me/919677792455"
+              href="https://wa.me/919626850192"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2.5 bg-[#25d366] hover:bg-[#20ba5a] text-white font-bold py-3.5 px-6 rounded-xl text-xs uppercase  transition-colors w-full sm:w-auto shadow-md"
