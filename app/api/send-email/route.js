@@ -15,8 +15,8 @@ export async function POST(request) {
     });
 
     const mailOptions = {
-      from: '"Cab Dispatch Engine" <your-email@gmail.com>',
-      to: "a.karthikmmv@gmail.com",
+      from: '"Cab Dispatch Engine" ',
+      to: "eswaran17phu012@gmail.com",
       subject: `🚨 NEW BOOKING: ${data.fullName} (${data.tripType})`,
       html: `
         <h3>New Ride Booking Details</h3>
