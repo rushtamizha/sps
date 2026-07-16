@@ -133,7 +133,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-blue-500 fill-current group-hover:scale-105 transition-transform" />
                 <div className="min-w-0">
                   <span className="block text-[9px] uppercase font-bold text-gray-500 tracking-wider">Call Support</span>
-                  <span className="block text-sm font-black text-white tracking-wide">+91 88255 55154</span>
+                  <span className="block text-sm font-black text-white tracking-wide">+91 9626850192</span>
                 </div>
               </a>
 

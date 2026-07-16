@@ -656,7 +656,7 @@ export default function TaxiBookingHero() {
           <form onSubmit={handleBookingSubmit} className="bg-white text-gray-800 w-full max-w-2xl rounded-3xl p-6 shadow-2xl flex flex-col border border-gray-100">
             <div className="mb-4">
               <h2 className="text-xl font-bold text-gray-900 tracking-tight">Quick Cab Reservation</h2>
-              <p className="text-xs text-gray-500 font-medium">Fires continuous dashboard updates directly across local operator arrays</p>
+             
             </div>
 
             <div className="space-y-4">
@@ -685,7 +685,7 @@ export default function TaxiBookingHero() {
                         : "border-gray-200 text-gray-700 hover:bg-gray-50"
                     }`}
                   >
-                    <span>Round Trip Journey</span>
+                    <span>Round Trip</span>
                     <span className="text-[10px] opacity-70 font-normal mt-0.5">Min 250 KM / Day rules</span>
                   </button>
                 </div>
